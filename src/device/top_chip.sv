@@ -23,10 +23,14 @@ module top_chip #(
    output logic ext_mem_write_en,
 
    //system inputs and outputs
-   input logic [IO_DATA_WIDTH-1:0] a_input,
+   input logic [IO_DATA_WIDTH-1:0] a_input0,
+   input logic [IO_DATA_WIDTH-1:0] a_input1,
+   input logic [IO_DATA_WIDTH-1:0] a_input2,
    input logic a_valid,
    output logic a_ready,
-   input logic [IO_DATA_WIDTH-1:0] b_input,
+   input logic [IO_DATA_WIDTH-1:0] b_input0,
+   input logic [IO_DATA_WIDTH-1:0] b_input1,
+   input logic [IO_DATA_WIDTH-1:0] b_input2,
    input logic b_valid,
    output logic b_ready,
 
@@ -46,10 +50,18 @@ module top_chip #(
   logic write_a;
   logic write_b;
 
-  `REG(IO_DATA_WIDTH, a);
-  `REG(IO_DATA_WIDTH, b);
-  assign a_next = a_input;
-  assign b_next = b_input;
+  `REG(IO_DATA_WIDTH, a0);
+  `REG(IO_DATA_WIDTH, a1);
+  `REG(IO_DATA_WIDTH, a2);
+  `REG(IO_DATA_WIDTH, b0);
+  `REG(IO_DATA_WIDTH, b1);
+  `REG(IO_DATA_WIDTH, b2);
+  assign a0_next = a_input0;
+  assign a1_next = a_input1;
+  assign a2_next = a_input2;
+  assign b0_next = b_input0;
+  assign b1_next = b_input1;
+  assign b2_next = b_input2;
   assign a_we = write_a;
   assign b_we = write_b;
 
@@ -102,7 +114,7 @@ module top_chip #(
   logic signed [ACCUMULATION_WIDTH-1:0] mac_out;
   assign ext_mem_dout = mac_out;
 
-  mac #(
+  mac3 #(
     .A_WIDTH(IO_DATA_WIDTH),
     .B_WIDTH(IO_DATA_WIDTH),
     .ACCUMULATOR_WIDTH(ACCUMULATION_WIDTH),
@@ -116,8 +128,12 @@ module top_chip #(
    .input_valid(mac_valid),
    .accumulate_internal(mac_accumulate_internal),
    .partial_sum_in(mac_partial_sum),
-   .a(a),
-   .b(b),
+   .a0(a0),
+   .a1(a1),
+   .a2(a2),
+   .b0(b0),
+   .b1(b1),
+   .b2(b2),
    .out(mac_out));
 
   assign out = mac_out;

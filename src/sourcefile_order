@@ -4,6 +4,7 @@ rtl_building_blocks/device/register.sv
 rtl_building_blocks/device/memory.sv
 rtl_building_blocks/device/fifo.sv
 rtl_building_blocks/device/mac.sv
+rtl_building_blocks/device/mac3.sv
 device/controller_fsm.sv
 device/top_chip.sv
 device/top_system.sv

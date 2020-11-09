@@ -7,11 +7,15 @@ interface intf #(
   logic arst_n;
 
   // input interface
-  logic [cfg.DATA_WIDTH - 1 : 0] a_input;
+  logic [cfg.DATA_WIDTH - 1 : 0] a_input0;
+  logic [cfg.DATA_WIDTH - 1 : 0] a_input1;
+  logic [cfg.DATA_WIDTH - 1 : 0] a_input2;
   logic a_valid;
   logic a_ready;
 
-  logic [cfg.DATA_WIDTH - 1 : 0] b_input;
+  logic [cfg.DATA_WIDTH - 1 : 0] b_input0;
+  logic [cfg.DATA_WIDTH - 1 : 0] b_input1;
+  logic [cfg.DATA_WIDTH - 1 : 0] b_input2;
   logic b_valid;
   logic b_ready;
 
@@ -28,11 +32,15 @@ interface intf #(
   default clocking cb @(posedge clk);
     default input #1ns output #2ns;
     output arst_n;
-    output a_input;
+    output a_input0;
+    output a_input1;
+    output a_input2;
     output a_valid;
     input  a_ready;
 
-    output b_input;
+    output b_input0;
+    output b_input1;
+    output b_input2;
     output b_valid;
     input  b_ready;
 
