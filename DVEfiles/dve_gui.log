@@ -1,0 +1,246 @@
+Notice: timing checks disabled with +notimingcheck at compile-time
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version M-2017.03_Full64; Runtime version M-2017.03_Full64;  Nov  6 09:26 2020
+VCD+ Writer M-2017.03_Full64 Copyright (c) 1991-2017 by Synopsys Inc.
+The design has assertions or cover properties.
+The assertion browser can be used to view them. Click on the assertion toolbar button or use the menu 'Window->Panes->Assertion' to open it.
+The file '/tmp/inter.vpd' was opened successfully.
+Warning: [DVSW002] 
+Value of 'data[0:HEIGHT-1]' might not be shown because the array size exceeds the limit of '4096'.
+You can either use memory viewer (recommended) or change this limit in the preference.
+Warning: [DVSW002] 
+Value of 'data[0:HEIGHT-1]' might not be shown because the array size exceeds the limit of '4096'.
+You can either use memory viewer (recommended) or change this limit in the preference.
+Warning: [DVSW307] 
+Could not find any driver for parameter: 'tbench_top.dut.FEATURE_MAP_WIDTH[31:0]'.
+---------------------------------------------
+
+The tool has just exited abnormally:
+
+
+Release = 'M-2017.03_Full64'  Architecture = 'linux64'  Program = 'DVE'
+
+'33816655 33853625 33855488 140737294974681'
+
+---------------------------------------------
+=======================DVE Context and Call Stack=========================
+Command line: /esat/micas-data/software/Synopsys/vcs_2017.03/gui/dve/linux64/bin/dve.exe -full64 -ucliplatform=linux64 -toolargs "-ucligui -toolexe out/simv -vpd_file /tmp/inter.vpd  -pid 301729" -toolin /tmp/vcs_20201106082607_301725_r0666113..stdin -toolout /tmp/vcs_20201106082607_301725_r0666113..stdout
+
+--- Stack trace follows:
+Could not find platform independent libraries <prefix>
+Could not find platform dependent libraries <exec_prefix>
+Consider setting $PYTHONHOME to <prefix>[:<exec_prefix>]
+'import site' failed; use -v for traceback
+Python Exception <type 'exceptions.ImportError'> No module named traceback: 
+/esat/micas-data/software/Synopsys/vcs_2017.03/linux64/bin/cbug-gdb-64/bin/gdb: warning: 
+Could not load the Python gdb module from `/esat/micas-data/software/Synopsys/vcs_2017.03/linux64/bin/cbug-gdb-64/share/gdb/python'.
+Limited Python support is available from the _gdb module.
+Suggest passing --data-directory=/path/to/gdb/data-directory.
+
+[New LWP 301745]
+[New LWP 301747]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+0x00007ffff4821f82 in waitpid () from /lib64/libc.so.6
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+Python Exception <type 'exceptions.ImportError'> No module named traceback: 
+
+Thread 3 (Thread 0x7fffecdd7700 (LWP 301747)):
+#0  0x00007ffff4846ab4 in read () from /lib64/libc.so.6
+#1  0x00007ffff47d7ac8 in __GI__IO_file_underflow () from /lib64/libc.so.6
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#2  0x00007ffff47d8c26 in __GI__IO_default_uflow () from /lib64/libc.so.6
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#3  0x00007ffff47cc28a in __GI__IO_getline_info () from /lib64/libc.so.6
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#4  0x00007ffff47cb28f in fgets () from /lib64/libc.so.6
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#5  0x00000000012379cb in ag::dveSmlSocket::run() ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#6  0x00000000029bd2ea in QThreadInstance::start(void*) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#7  0x00007ffff5f592de in start_thread () from /lib64/libpthread.so.0
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#8  0x00007ffff4855e83 in clone () from /lib64/libc.so.6
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+Python Exception <type 'exceptions.ImportError'> No module named traceback: 
+
+Thread 2 (Thread 0x7fffed5ea700 (LWP 301745)):
+#0  0x00007ffff5f5f48c in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007ffff570e7f5 in ?? () from /lib64/libX11.so.6
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#2  0x00007ffff570ec8d in ?? () from /lib64/libX11.so.6
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#3  0x00007ffff570334c in XFreeFont () from /lib64/libX11.so.6
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#4  0x0000000002cabdf7 in QFontEngineXLFD::~QFontEngineXLFD() ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#5  0x0000000002cabee1 in QFontEngineXLFD::~QFontEngineXLFD() ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#6  0x0000000002cabf2e in QFontEngineLatinXLFD::~QFontEngineLatinXLFD() ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#7  0x0000000002cac001 in QFontEngineLatinXLFD::~QFontEngineLatinXLFD() ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#8  0x00000000029d9eaf in QFontCache::~QFontCache() ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#9  0x00000000029da111 in QFontCache::~QFontCache() ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#10 0x00000000029dad15 in QSingleCleanupHandler<QFontCache>::~QSingleCleanupHandler() ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#11 0x00007ffff4793e9c in __run_exit_handlers () from /lib64/libc.so.6
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#12 0x00007ffff4793fd0 in exit () from /lib64/libc.so.6
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#13 0x00000000029698bc in ?? ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#14 0x00007ffff57239f2 in _XIOError () from /lib64/libX11.so.6
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#15 0x00007ffff57211d5 in _XEventsQueued () from /lib64/libX11.so.6
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#16 0x00007ffff56fcfa7 in XCheckTypedEvent () from /lib64/libX11.so.6
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#17 0x0000000001116783 in ag::dveXThread::run() ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#18 0x00000000029bd2ea in QThreadInstance::start(void*) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#19 0x00007ffff5f592de in start_thread () from /lib64/libpthread.so.0
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#20 0x00007ffff4855e83 in clone () from /lib64/libc.so.6
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+Python Exception <type 'exceptions.ImportError'> No module named traceback: 
+
+Thread 1 (Thread 0x7ffff7fc3640 (LWP 301744)):
+#0  0x00007ffff4821f82 in waitpid () from /lib64/libc.so.6
+#1  0x00007ffff479e83f in do_system () from /lib64/libc.so.6
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#2  0x00007ffff755771b in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313e639d2928478c79b3f673f99203bcf8be64600612100082236bffb2007f1e0ef9 () from /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/liberrorinf.so
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#3  0x00007ffff7557c6b in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313e81c34e9ac4c8988ef4a6e067b3aa9271e9f15440f9e8f69ebc77e2fd65860faa () from /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/liberrorinf.so
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#4  0x00007ffff7558f45 in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313efba706aab251478fa49e66610e453774633a6c152e7ef778f2202cda681f3d4e () from /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/liberrorinf.so
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#5  0x00007ffff75521f5 in SNPSle_d35ca1ff70d465c2b9b1a72eee90a506fdd009d3de3db1de () from /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/liberrorinf.so
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#6  0x0000000002049063 in ag::logErrorMessage(ag::errorType, QString const&, bool) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#7  0x0000000002049800 in ?? ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#8  0x00007ffff4793ed9 in __run_exit_handlers () from /lib64/libc.so.6
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#9  0x00007ffff4793fd0 in exit () from /lib64/libc.so.6
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#10 0x00000000029698bc in ?? ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#11 0x00007ffff57239f2 in _XIOError () from /lib64/libX11.so.6
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#12 0x00007ffff5721aa7 in _XReply () from /lib64/libX11.so.6
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#13 0x00007ffff5717752 in XQueryPointer () from /lib64/libX11.so.6
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#14 0x00000000029806a1 in QCursor::pos() ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#15 0x0000000002afe456 in QTabBar::paint(QPainter*, QTab*, bool) const ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#16 0x0000000002afc840 in QTabBar::paintEvent(QPaintEvent*) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#17 0x0000000002a3c3c8 in QWidget::event(QEvent*) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#18 0x00000000029c33c5 in QApplication::internalNotify(QObject*, QEvent*) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#19 0x00000000029c36fa in QApplication::notify(QObject*, QEvent*) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#20 0x00000000020be5a2 in EkExtQtApp::notify(QObject*, QEvent*) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#21 0x000000000208e55c in ag::baseQtApp::notify(QObject*, QEvent*) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#22 0x000000000296eec6 in QETWidget::translatePaintEvent(_XEvent const*) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#23 0x000000000297879e in QApplication::x11ProcessEvent(_XEvent*) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#24 0x0000000002986842 in QEventLoop::processEvents(unsigned int) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#25 0x000000000115aa52 in ag::ovaEventLoop::processEvents(unsigned int) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#26 0x00000000029d3d39 in QEventLoop::enterLoop() ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#27 0x00000000029d3cba in QEventLoop::exec() ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#28 0x000000000115a3f9 in run_cci_event_loop ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#29 0x000000000111860c in ag::ovaAppInst::enterEventLoop(int, char**) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#30 0x0000000000dd06c5 in main ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+No context available
+==========================================================================

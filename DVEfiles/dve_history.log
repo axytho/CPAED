@@ -1,0 +1,94 @@
+# Preference setting overrides
+gui_create_pref_key -category {Globals} -key {load_detail_for_funcov} -value_type {bool} -value {false}
+
+# State setting overrides
+gui_state_default_create -off -ini
+gui_create_state_key -category FindDialog -key m_pMatchCase -value_type bool -value false
+gui_create_state_key -category FindDialog -key m_pMatchWord -value_type bool -value false
+gui_create_state_key -category FindDialog -key m_pUseCombo -value_type string -value {}
+gui_create_state_key -category FindDialog -key m_pWrapAround -value_type bool -value true
+gui_state_default_create -off
+
+# Begin command logging
+gui_set_pref_value -category {Globals} -key {smart_resize} -value {false}
+gui_set_pref_value -category {Globals} -key {smart_resize} -value {true}
+gui_sim_run Ucli -exe out/simv -args {-ucligui  -vpd_file /tmp/inter.vpd} -dir out
+gui_list_expand -id  Data.1   {tbench_top.latency[63:0]}
+gui_list_collapse -id  Data.1   {tbench_top.latency[63:0]}
+gui_list_select -id Data.1 -selected  { {tbench_top.EXT_MEM_WIDTH[31:0]}   }
+gui_list_select -id Data.1 -selected  { {tbench_top.FEATURE_MAP_HEIGHT[31:0]}   }
+gui_list_action -id  Data.1 {tbench_top.FEATURE_MAP_HEIGHT[31:0]}
+gui_list_select -id Data.1 -selected  { {tbench_top.FEATURE_MAP_WIDTH[31:0]}   }
+gui_list_action -id  Data.1 {tbench_top.FEATURE_MAP_WIDTH[31:0]}
+gui_list_expand -id  Hier.1   tbench_top
+gui_list_select -id Hier.1 -current_item_name tbench_top.dut -current_item_type Scope  -selected  { tbench_top.dut   }
+gui_list_expand -id Hier.1   tbench_top.dut
+gui_list_action -id  Hier.1 tbench_top.dut
+gui_src_highlight_item -id Source.1 -lfrom 29 -idxfrom 26 -fileIdFrom 0 -lto 29 -idxto 44 -fileIdTo 0 -selection {OUTPUT_NB_CHANNELS} -selectionId 0 -replace 0
+gui_src_highlight_item -id Source.1 -lfrom 50 -idxfrom 12 -fileIdFrom 0 -lto 50 -idxto 26 -fileIdTo 0 -selection {EXT_MEM_HEIGHT} -selectionId 0 -replace 0
+gui_src_highlight_item -id Source.1 -lfrom 53 -idxfrom 2 -fileIdFrom 0 -lto 53 -idxto 9 -fileIdTo 0 -selection {ext_mem} -selectionId 0 -replace 0
+gui_open_source -id Source.1  -active  tbench_top.dut.ext_mem
+gui_close_window -window DLPane.1
+gui_src_show_source -id TopLevel.1 -scope active
+gui_src_highlight_item -id Source.1 -lfrom 16 -idxfrom 27 -fileIdFrom 0 -lto 16 -idxto 29 -fileIdTo 0 -selection {g2} -selectionId 0 -replace 0
+gui_src_highlight_item -id Source.1 -lfrom 16 -idxfrom 23 -fileIdFrom 0 -lto 16 -idxto 29 -fileIdTo 0 -selection {$clog2} -selectionId 0 -replace 0
+gui_copy_selected -id Source.1
+gui_src_highlight_item -id Source.1 -lfrom 31 -idxfrom 16 -fileIdFrom 0 -lto 31 -idxto 20 -fileIdTo 0 -selection {data} -selectionId 0 -replace 0
+gui_list_action -id  Hier.1 tbench_top.dut
+gui_src_clone -id  Source.1
+gui_list_select -id Hier.1 -current_item_name tbench_top.dut.ext_mem -current_item_type Scope  -selected  { tbench_top.dut.ext_mem   }
+gui_list_expand -id Hier.1   tbench_top.dut.ext_mem
+gui_list_action -id  Hier.1 tbench_top.dut.ext_mem
+gui_src_clone -id  Source.2
+gui_list_select -id Hier.1 -current_item_name tbench_top.dut.top_chip_i -current_item_type Scope  -selected  { tbench_top.dut.top_chip_i   }
+gui_list_expand -id Hier.1   tbench_top.dut.top_chip_i
+gui_list_action -id  Hier.1 tbench_top.dut.top_chip_i
+gui_list_select -id Hier.1 -current_item_name tbench_top.dut.ext_mem -current_item_type Scope  -selected  { tbench_top.dut.ext_mem   }
+gui_list_action -id  Hier.1 tbench_top.dut.ext_mem
+gui_src_highlight_item -id Source.2 -lfrom 27 -idxfrom 26 -fileIdFrom 0 -lto 27 -idxto 43 -fileIdTo 0 -selection {FEATURE_MAP_WIDTH} -selectionId 0 -replace 0
+gui_src_highlight_item -id Source.2 -lfrom 27 -idxfrom 26 -fileIdFrom 0 -lto 27 -idxto 43 -fileIdTo 0 -selection {FEATURE_MAP_WIDTH} -selectionId 0 -replace 0
+gui_show_drivers -signal  {tbench_top.dut.FEATURE_MAP_WIDTH[31:0]}
+gui_get_drivers -id Source.2 -signal {tbench_top.dut.FEATURE_MAP_WIDTH[31:0]}
+gui_list_select -id Hier.1 -current_item_name tbench_top -current_item_type Scope  -selected  { tbench_top   }
+gui_list_action -id  Hier.1 tbench_top
+gui_list_select -id Hier.1 -current_item_name tbench_top.dut.ext_mem -current_item_type Scope  -selected  { tbench_top.dut.ext_mem   }
+gui_list_action -id  Hier.1 tbench_top.dut.ext_mem
+gui_list_select -id Hier.1 -current_item_name tbench_top.dut.top_chip_i.a_r -current_item_type Scope  -selected  { tbench_top.dut.top_chip_i.a_r   }
+gui_list_expand -id Hier.1   tbench_top.dut.top_chip_i.a_r
+gui_list_action -id  Hier.1 tbench_top.dut.top_chip_i.a_r
+gui_close_window -window  Source.2
+gui_list_action -id  Hier.1 tbench_top.dut.top_chip_i.a_r
+gui_close_window -window  Source.3
+gui_src_clone -id  Source.1
+gui_list_select -id Hier.1 -current_item_name tbench_top.dut.top_chip_i.b_r -current_item_type Scope  -selected  { tbench_top.dut.top_chip_i.b_r   }
+gui_list_expand -id Hier.1   tbench_top.dut.top_chip_i.b_r
+gui_list_action -id  Hier.1 tbench_top.dut.top_chip_i.b_r
+gui_list_action -id  Hier.1 tbench_top.dut.top_chip_i.b_r
+gui_list_action -id  Hier.1 tbench_top.dut.top_chip_i.b_r
+gui_list_action -id  Hier.1 tbench_top.dut.top_chip_i.b_r
+gui_list_action -id  Hier.1 tbench_top.dut.top_chip_i.b_r
+gui_list_select -id Hier.1 -current_item_name tbench_top.dut -current_item_type Scope  -selected  { tbench_top.dut   }
+gui_list_action -id  Hier.1 tbench_top.dut
+gui_list_select -id Hier.1 -current_item_name tbench_top.dut.ext_mem -current_item_type Scope  -selected  { tbench_top.dut.ext_mem   }
+gui_list_action -id  Hier.1 tbench_top.dut.ext_mem
+gui_src_clone -id  Source.2
+gui_list_select -id Hier.1 -current_item_name tbench_top.dut.top_chip_i.mac_unit -current_item_type Scope  -selected  { tbench_top.dut.top_chip_i.mac_unit   }
+gui_list_expand -id Hier.1   tbench_top.dut.top_chip_i.mac_unit
+gui_list_action -id  Hier.1 tbench_top.dut.top_chip_i.mac_unit
+gui_list_select -id Hier.1 -current_item_name tbench_top.dut.ext_mem -current_item_type Scope  -selected  { tbench_top.dut.ext_mem   }
+gui_list_action -id  Hier.1 tbench_top.dut.ext_mem
+gui_list_action -id  Hier.1 tbench_top.dut.ext_mem
+gui_list_select -id Hier.1 -current_item_name tbench_top -current_item_type Scope  -selected  { tbench_top   }
+gui_list_action -id  Hier.1 tbench_top
+gui_unset_target_frame Source
+gui_list_select -id Hier.1 -current_item_name tbench_top.dut -current_item_type Scope  -selected  { tbench_top.dut   }
+gui_list_action -id  Hier.1 tbench_top.dut
+gui_list_select -id Hier.1 -current_item_name tbench_top.dut.ext_mem -current_item_type Scope  -selected  { tbench_top.dut.ext_mem   }
+gui_open_source -active tbench_top.dut.ext_mem -activate
+gui_show_window -window  Stack.1
+gui_show_window -window  Class.1
+gui_show_window -window  Hier.1
+gui_list_show_data -select -id  Hier.1   tbench_top.dut.ext_mem
+gui_open_source -active tbench_top.dut.ext_mem -activate
+gui_list_select -id Hier.1 -current_item_name tbench_top.dut.top_chip_i -current_item_type Scope  -selected  { tbench_top.dut.top_chip_i   }
+gui_open_source -active tbench_top.dut.top_chip_i -activate

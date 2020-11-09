@@ -1,0 +1,16 @@
+tbench_top.dut.top_chip_i.controller.k_v_r.area:         544
+tbench_top.dut.top_chip_i.controller.k_h_r.area:         544
+tbench_top.dut.top_chip_i.controller.x_r.area:         544
+tbench_top.dut.top_chip_i.controller.y_r.area:         544
+tbench_top.dut.top_chip_i.controller.ch_in_r.area:         544
+tbench_top.dut.top_chip_i.controller.ch_out_r.area:         544
+tbench_top.dut.top_chip_i.controller.prev_ch_out_r.area:         544
+tbench_top.dut.top_chip_i.controller.output_x_r.area:         544
+tbench_top.dut.top_chip_i.controller.output_y_r.area:         544
+tbench_top.dut.top_chip_i.controller.output_ch_r.area:         544
+tbench_top.dut.top_chip_i.a_r.area:         272
+tbench_top.dut.top_chip_i.b_r.area:         272
+tbench_top.dut.top_chip_i.controller.output_valid_reg_r.area:          17
+tbench_top.dut.top_chip_i.mac_unit.accumulator_value_r.area:         544
+tbench_top.dut.top_chip_i.mac_unit.mul.area:        5800
+tbench_top.dut.top_chip_i.mac_unit.add.area:        1000

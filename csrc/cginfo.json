@@ -1,0 +1,232 @@
+{
+    "LVLData": [
+        "SIM"
+    ],
+    "stat": {
+        "ru_self_cgstart": {
+            "ru_nvcsw": 473,
+            "ru_stime_sec": 0.043616000000000002,
+            "ru_utime_sec": 0.11203200000000001,
+            "ru_maxrss_kb": 118232,
+            "ru_nivcsw": 3,
+            "ru_minflt": 8379,
+            "ru_majflt": 14
+        },
+        "ru_childs_cgstart": {
+            "ru_nvcsw": 0,
+            "ru_stime_sec": 0.0,
+            "ru_utime_sec": 0.0,
+            "ru_maxrss_kb": 0,
+            "ru_nivcsw": 0,
+            "ru_minflt": 0,
+            "ru_majflt": 0
+        },
+        "nQuads": 5309,
+        "ru_childs_end": {
+            "ru_nvcsw": 7,
+            "ru_stime_sec": 0.0022820000000000002,
+            "ru_utime_sec": 0.0,
+            "ru_maxrss_kb": 34252,
+            "ru_nivcsw": 0,
+            "ru_minflt": 241,
+            "ru_majflt": 0
+        },
+        "nMops": 14157,
+        "totalObjSize": 492497,
+        "mopSpeed": 188870.80420513373,
+        "Frontend(%)": 59.914005176802796,
+        "ru_self_end": {
+            "ru_nvcsw": 565,
+            "ru_stime_sec": 0.051150000000000001,
+            "ru_utime_sec": 0.18698799999999999,
+            "ru_maxrss_kb": 124824,
+            "ru_nivcsw": 3,
+            "ru_minflt": 10690,
+            "ru_majflt": 14
+        },
+        "outputSizePerQuad": 92.766434356752683,
+        "mop/quad": 2.6666038802034282,
+        "quadSpeed": 70828.219221943553,
+        "CodeGen(%)": 40.085994823197204,
+        "peak_mem_kb": 302164
+    },
+    "Misc": {
+        "cwd": "/users/students/r0666113/Documents/CPAED/sync1/src",
+        "csrc": "../csrc",
+        "default_output_dir": "../csrc",
+        "daidir": "/users/students/r0666113/Documents/CPAED/sync1/src/../out/simv.daidir",
+        "csrc_abs": "/users/students/r0666113/Documents/CPAED/sync1/csrc",
+        "daidir_abs": "/users/students/r0666113/Documents/CPAED/sync1/out/simv.daidir",
+        "archive_dir": "archive.2"
+    },
+    "MlibObjs": {},
+    "PEModules": [],
+    "CurCompileModules": [
+        "...MASTER...",
+        "...MASTER...",
+        "vcs_paramclassrepository",
+        "vcs_paramclassrepository",
+        "_vcs_unit__3685399459",
+        "_vcs_unit__3685399459",
+        "std",
+        "std",
+        "register_0000",
+        "register_0000",
+        "top_system",
+        "top_system",
+        "intf",
+        "intf",
+        "testprogram",
+        "testprogram",
+        "tbench_top",
+        "tbench_top"
+    ],
+    "PrevCompiledModules": {
+        "tbench_top": {
+            "Mk7In_d": {
+                "archive": "archive.2/_533031_archive_1.a",
+                "checksum": 0,
+                "out": "Mk7In_d.o",
+                "bytes": 17835,
+                "mod": "tbench_top",
+                "mode": 4
+            }
+        },
+        "vcs_paramclassrepository": {
+            "hEeZs_d": {
+                "archive": "archive.2/_533031_archive_1.a",
+                "checksum": 0,
+                "out": "hEeZs_d.o",
+                "bytes": 321639,
+                "mod": "vcs_paramclassrepository",
+                "mode": 4
+            }
+        },
+        "...MASTER...": {
+            "amcQw_d": {
+                "checksum": 0,
+                "out": "objs/amcQw_d.o",
+                "bytes": 8222,
+                "mod": "...MASTER...",
+                "mode": 4
+            }
+        },
+        "top_system": {
+            "zkDLe_d": {
+                "archive": "archive.2/_533031_archive_1.a",
+                "checksum": 0,
+                "out": "zkDLe_d.o",
+                "bytes": 180467,
+                "mod": "top_system",
+                "mode": 4
+            }
+        },
+        "testprogram": {
+            "arjKm_d": {
+                "archive": "archive.2/_533031_archive_1.a",
+                "checksum": 0,
+                "out": "arjKm_d.o",
+                "bytes": 17176,
+                "mod": "testprogram",
+                "mode": 4
+            }
+        },
+        "std": {
+            "reYIK_d": {
+                "archive": "archive.2/_533031_archive_1.a",
+                "checksum": 0,
+                "out": "reYIK_d.o",
+                "bytes": 41961,
+                "mod": "std",
+                "mode": 4
+            }
+        },
+        "intf": {
+            "k6LTY_d": {
+                "archive": "archive.2/_533031_archive_1.a",
+                "checksum": 0,
+                "out": "k6LTY_d.o",
+                "bytes": 60608,
+                "mod": "intf",
+                "mode": 4
+            }
+        },
+        "_vcs_unit__3685399459": {
+            "DJpvB_d": {
+                "archive": "archive.2/_533031_archive_1.a",
+                "checksum": 0,
+                "out": "DJpvB_d.o",
+                "bytes": 35380,
+                "mod": "_vcs_unit__3685399459",
+                "mode": 4
+            }
+        }
+    },
+    "CompileProcesses": [
+        "cgproc.533031.json"
+    ],
+    "NameTable": {
+        "tbench_top": [
+            "tbench_top",
+            "Mk7In",
+            "module",
+            8
+        ],
+        "vcs_paramclassrepository": [
+            "vcs_paramclassrepository",
+            "hEeZs",
+            "module",
+            1
+        ],
+        "_vcs_unit__3685399459": [
+            "_vcs_unit__3685399459",
+            "DJpvB",
+            "module",
+            2
+        ],
+        "std": [
+            "std",
+            "reYIK",
+            "module",
+            3
+        ],
+        "testprogram": [
+            "testprogram",
+            "arjKm",
+            "module",
+            7
+        ],
+        "register_0000": [
+            "register_0000",
+            "N3bug",
+            "module",
+            4
+        ],
+        "top_system": [
+            "top_system",
+            "zkDLe",
+            "module",
+            5
+        ],
+        "intf": [
+            "intf",
+            "k6LTY",
+            "module",
+            6
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module",
+            9
+        ]
+    },
+    "CompileStrategy": "fullobj",
+    "CurCompileUdps": {},
+    "SIMBData": {
+        "archive": "archive.2/_533031_archive_1.a",
+        "bytes": 78131,
+        "out": "amcQwB.o"
+    },
+    "CompileStatus": "Successful"
+}
