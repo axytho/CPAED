@@ -61,23 +61,23 @@ class Driver #(config_t cfg);
                   if( x+0-cfg.KERNEL_SIZE/2 >= 0 && x+0-cfg.KERNEL_SIZE/2 < cfg.FEATURE_MAP_WIDTH
                     &&y+ky-cfg.KERNEL_SIZE/2 >= 0 && y+ky-cfg.KERNEL_SIZE/2 < cfg.FEATURE_MAP_HEIGHT) begin
                     assert (!$isunknown(tract_feature.inputs[y+ky-cfg.KERNEL_SIZE/2 ][x+0-cfg.KERNEL_SIZE/2][inch]));
-                    intf_i.cb.a_input <= tract_feature.inputs[y+ky-cfg.KERNEL_SIZE/2 ][x+0-cfg.KERNEL_SIZE/2][inch];
+                    intf_i.cb.a_input0 <= tract_feature.inputs[y+ky-cfg.KERNEL_SIZE/2 ][x+0-cfg.KERNEL_SIZE/2][inch];
                   end else begin
-                    intf_i.cb.a_input <= 0; // zero padding for boundary cases
+                    intf_i.cb.a_input0 <= 0; // zero padding for boundary cases
                   end
                                     if( x+1-cfg.KERNEL_SIZE/2 >= 0 && x+1-cfg.KERNEL_SIZE/2 < cfg.FEATURE_MAP_WIDTH
                     &&y+ky-cfg.KERNEL_SIZE/2 >= 0 && y+ky-cfg.KERNEL_SIZE/2 < cfg.FEATURE_MAP_HEIGHT) begin
                     assert (!$isunknown(tract_feature.inputs[y+ky-cfg.KERNEL_SIZE/2 ][x+1-cfg.KERNEL_SIZE/2][inch]));
-                    intf_i.cb.a_input <= tract_feature.inputs[y+ky-cfg.KERNEL_SIZE/2 ][x+1-cfg.KERNEL_SIZE/2][inch];
+                    intf_i.cb.a_input1 <= tract_feature.inputs[y+ky-cfg.KERNEL_SIZE/2 ][x+1-cfg.KERNEL_SIZE/2][inch];
                   end else begin
-                    intf_i.cb.a_input <= 0; // zero padding for boundary cases
+                    intf_i.cb.a_input1 <= 0; // zero padding for boundary cases
                   end
                                     if( x+2-cfg.KERNEL_SIZE/2 >= 0 && x+2-cfg.KERNEL_SIZE/2 < cfg.FEATURE_MAP_WIDTH
                     &&y+ky-cfg.KERNEL_SIZE/2 >= 0 && y+ky-cfg.KERNEL_SIZE/2 < cfg.FEATURE_MAP_HEIGHT) begin
                     assert (!$isunknown(tract_feature.inputs[y+ky-cfg.KERNEL_SIZE/2 ][x+2-cfg.KERNEL_SIZE/2][inch]));
-                    intf_i.cb.a_input <= tract_feature.inputs[y+ky-cfg.KERNEL_SIZE/2 ][x+2-cfg.KERNEL_SIZE/2][inch];
+                    intf_i.cb.a_input2 <= tract_feature.inputs[y+ky-cfg.KERNEL_SIZE/2 ][x+2-cfg.KERNEL_SIZE/2][inch];
                   end else begin
-                    intf_i.cb.a_input <= 0; // zero padding for boundary cases
+                    intf_i.cb.a_input2 <= 0; // zero padding for boundary cases
                   end
                   @(intf_i.cb iff intf_i.cb.a_ready);
                   intf_i.cb.a_valid <= 0;

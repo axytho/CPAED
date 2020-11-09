@@ -1,4 +1,4 @@
-module mac #(
+module mac3 #(
   parameter int A_WIDTH = 16,
   parameter int B_WIDTH = 16,
   parameter int ACCUMULATOR_WIDTH = 32,
@@ -71,7 +71,7 @@ module mac #(
 
 
   //makes register with we accumulator_value_we, qout accumulator_value, din accumulator_value_next, clk clk and arst_n_in arst_n_in
-  //see register.sv
+  //see register.sv 
   `REG(ACCUMULATOR_WIDTH, accumulator_value);
   assign accumulator_value_we = input_valid;
   logic signed [ACCUMULATOR_WIDTH-1:0] tempSum0;
