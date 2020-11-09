@@ -46,23 +46,25 @@ module controller_fsm #(
   `REG(32, ch_out);
 
   logic reset_k_v, reset_k_h, reset_x, reset_y, reset_ch_in, reset_ch_out;
+  //assign k_h_next = reset_k_h ? 0 : k_h + 1;
   assign k_v_next = reset_k_v ? 0 : k_v + 1;
-  assign k_h_next = reset_k_h ? 0 : k_h + 1;
   assign x_next = reset_x ? 0 : x + 1;
   assign y_next = reset_y ? 0 : y + 1;
   assign ch_in_next = reset_ch_in ? 0 : ch_in + 1;
   assign ch_out_next = reset_ch_out ? 0 : ch_out + 1;
 
   logic last_k_v, last_k_h, last_x, last_y, last_ch_in, last_ch_out;
+  //assign last_k_h = k_h == KERNEL_SIZE - 1;
+  assign last_k_h = 1;
   assign last_k_v = k_v == KERNEL_SIZE - 1;
-  assign last_k_h = k_h == KERNEL_SIZE - 1;
   assign last_x = x == FEATURE_MAP_WIDTH-1;
   assign last_y = y == FEATURE_MAP_HEIGHT-1;
   assign last_ch_in = ch_in == INPUT_NB_CHANNELS - 1;
   assign last_ch_out = ch_out == OUTPUT_NB_CHANNELS - 1;
 
-  assign reset_k_v = last_k_v;
+  
   assign reset_k_h = last_k_h;
+  assign reset_k_v = last_k_v;
   assign reset_x = last_x;
   assign reset_y = last_y;
   assign reset_ch_in = last_ch_in;
@@ -80,7 +82,7 @@ module controller_fsm #(
               body
   */
   // ==>
-  assign k_h_we    = mac_valid; //each time a mac is done, k_h_we increments (or resets to 0 if last)
+  //assign k_h_we    = mac_valid; //each time a mac is done, k_h_we increments (or resets to 0 if last)
   assign k_v_we    = mac_valid && last_k_h; //only if last of k_h loop
   assign ch_out_we = mac_valid && last_k_h && last_k_v; //only if last of all enclosed loops
   assign ch_in_we  = mac_valid && last_k_h && last_k_v && last_ch_out; //only if last of all enclosed loops
