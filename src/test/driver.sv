@@ -54,6 +54,7 @@ class Driver #(config_t cfg);
           for(int inch=0;inch<cfg.INPUT_NB_CHANNELS; inch++) begin
             for(int outch=0;outch<cfg.OUTPUT_NB_CHANNELS; outch++) begin
               for(int ky=0;ky<cfg.KERNEL_SIZE; ky++) begin
+			      $display("[DRV] a new loop");
                 //for(int kx=0;kx<cfg.KERNEL_SIZE; kx++) begin
                   
                   //drive a (one word from feature)
