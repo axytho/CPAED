@@ -62,8 +62,12 @@ module top_chip #(
   assign b0_next = b_input0;
   assign b1_next = b_input1;
   assign b2_next = b_input2;
-  assign a_we = write_a;
-  assign b_we = write_b;
+  assign a0_we = write_a;
+  assign b0_we = write_b;
+  assign a1_we = write_a;
+  assign b1_we = write_b;
+  assign a2_we = write_a;
+  assign b2_we = write_b;
 
   logic mac_valid;
   logic mac_accumulate_internal;
