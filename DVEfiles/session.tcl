@@ -1,11 +1,11 @@
 # Begin_DVE_Session_Save_Info
 # DVE full session
-# Saved on Thu Nov 12 08:44:30 2020
+# Saved on Thu Nov 12 17:54:59 2020
 # Designs open: 1
-#   Sim: /users/students/r0669247/Documents/CPAED/resp/CPAED/out/simv
+#   Sim: /users/students/r0666113/Documents/CPAED/sync1/out/simv
 # Toplevel windows open: 1
-# 	TopLevel.1
-#   Source.1: tbench_top.dut.ext_mem
+# 	TopLevel.2
+#   Source.1: 
 #   Group count = 0
 # End_DVE_Session_Save_Info
 
@@ -13,7 +13,7 @@
 # DVE build date: Feb 15 2017 21:10:45
 
 
-#<Session mode="Full" path="/users/students/r0669247/Documents/CPAED/resp/CPAED/DVEfiles/session.tcl" type="Debug">
+#<Session mode="Full" path="/users/students/r0666113/Documents/CPAED/sync1/DVEfiles/session.tcl" type="Debug">
 
 gui_set_loading_session_type Post
 gui_continuetime_set
@@ -57,15 +57,15 @@ gui_src_preferences -tabstop 8 -maxbits 24 -windownumber 1
 # DVE top-level session
 
 
-# Create and position top-level window: TopLevel.1
+# Create and position top-level window: TopLevel.2
 
-if {![gui_exist_window -window TopLevel.1]} {
-    set TopLevel.1 [ gui_create_window -type TopLevel \
+if {![gui_exist_window -window TopLevel.2]} {
+    set TopLevel.2 [ gui_create_window -type TopLevel \
        -icon $::env(DVE)/auxx/gui/images/toolbars/dvewin.xpm] 
 } else { 
-    set TopLevel.1 TopLevel.1
+    set TopLevel.2 TopLevel.2
 }
-gui_show_window -window ${TopLevel.1} -show_state normal -rect {{193 70} {905 767}}
+gui_show_window -window ${TopLevel.2} -show_state maximized -rect {{-141 139} {818 1154}}
 
 # ToolBar settings
 gui_set_toolbar_attributes -toolbar {TimeOperations} -dock_state top
@@ -99,41 +99,19 @@ gui_show_toolbar -toolbar {Zoom And Pan History}
 gui_set_toolbar_attributes -toolbar {Grid} -dock_state top
 gui_set_toolbar_attributes -toolbar {Grid} -offset 0
 gui_show_toolbar -toolbar {Grid}
-gui_set_toolbar_attributes -toolbar {Simulator} -dock_state top
-gui_set_toolbar_attributes -toolbar {Simulator} -offset 0
-gui_show_toolbar -toolbar {Simulator}
-gui_set_toolbar_attributes -toolbar {Interactive Rewind} -dock_state top
-gui_set_toolbar_attributes -toolbar {Interactive Rewind} -offset 0
-gui_show_toolbar -toolbar {Interactive Rewind}
-gui_set_toolbar_attributes -toolbar {Testbench} -dock_state top
-gui_set_toolbar_attributes -toolbar {Testbench} -offset 0
-gui_show_toolbar -toolbar {Testbench}
+gui_hide_toolbar -toolbar {Simulator}
+gui_hide_toolbar -toolbar {Interactive Rewind}
+gui_hide_toolbar -toolbar {Testbench}
 
 # End ToolBar settings
 
 # Docked window settings
-set HSPane.1 [gui_create_window -type HSPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 170]
-catch { set Hier.1 [gui_share_window -id ${HSPane.1} -type Hier] }
-catch { set Stack.1 [gui_share_window -id ${HSPane.1} -type Stack -silent] }
-catch { set Class.1 [gui_share_window -id ${HSPane.1} -type Class -silent] }
-catch { set Object.1 [gui_share_window -id ${HSPane.1} -type Object -silent] }
-gui_set_window_pref_key -window ${HSPane.1} -key dock_width -value_type integer -value 170
-gui_set_window_pref_key -window ${HSPane.1} -key dock_height -value_type integer -value -1
-gui_set_window_pref_key -window ${HSPane.1} -key dock_offset -value_type integer -value 0
-gui_update_layout -id ${HSPane.1} {{left 0} {top 0} {width 169} {height 376} {dock_state left} {dock_on_new_line true} {child_hier_colhier 140} {child_hier_coltype 100} {child_hier_colpd 0} {child_hier_col1 0} {child_hier_col2 1} {child_hier_col3 -1}}
-set DLPane.1 [gui_create_window -type DLPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 170]
-catch { set Data.1 [gui_share_window -id ${DLPane.1} -type Data] }
-catch { set Local.1 [gui_share_window -id ${DLPane.1} -type Local -silent] }
-catch { set Member.1 [gui_share_window -id ${DLPane.1} -type Member -silent] }
-gui_set_window_pref_key -window ${DLPane.1} -key dock_width -value_type integer -value 170
-gui_set_window_pref_key -window ${DLPane.1} -key dock_height -value_type integer -value 376
-gui_set_window_pref_key -window ${DLPane.1} -key dock_offset -value_type integer -value 0
-gui_update_layout -id ${DLPane.1} {{left 0} {top 0} {width 169} {height 376} {dock_state left} {dock_on_new_line true} {child_data_colvariable 140} {child_data_colvalue 100} {child_data_coltype 40} {child_data_col1 0} {child_data_col2 1} {child_data_col3 2}}
-set Console.1 [gui_create_window -type Console -parent ${TopLevel.1} -dock_state bottom -dock_on_new_line true -dock_extent 175]
-gui_set_window_pref_key -window ${Console.1} -key dock_width -value_type integer -value 713
-gui_set_window_pref_key -window ${Console.1} -key dock_height -value_type integer -value 175
-gui_set_window_pref_key -window ${Console.1} -key dock_offset -value_type integer -value 0
-gui_update_layout -id ${Console.1} {{left 0} {top 0} {width 712} {height 174} {dock_state bottom} {dock_on_new_line true}}
+set HSPane.2 [gui_create_window -type HSPane -parent ${TopLevel.2} -dock_state left -dock_on_new_line true -dock_extent 356]
+catch { set Hier.2 [gui_share_window -id ${HSPane.2} -type Hier] }
+gui_set_window_pref_key -window ${HSPane.2} -key dock_width -value_type integer -value 356
+gui_set_window_pref_key -window ${HSPane.2} -key dock_height -value_type integer -value 557
+gui_set_window_pref_key -window ${HSPane.2} -key dock_offset -value_type integer -value 0
+gui_update_layout -id ${HSPane.2} {{left 0} {top 0} {width 355} {height 885} {dock_state left} {dock_on_new_line true} {child_hier_colhier 224} {child_hier_coltype 122} {child_hier_colpd 0} {child_hier_col1 0} {child_hier_col2 1} {child_hier_col3 -1}}
 #### Start - Readjusting docked view's offset / size
 set dockAreaList { top left right bottom }
 foreach dockArea $dockAreaList {
@@ -152,23 +130,23 @@ foreach dockArea $dockAreaList {
   }
 }
 #### End - Readjusting docked view's offset / size
-gui_sync_global -id ${TopLevel.1} -option true
+gui_sync_global -id ${TopLevel.2} -option true
 
 # MDI window settings
-set Source.1 [gui_create_window -type {Source}  -parent ${TopLevel.1}]
-gui_show_window -window ${Source.1} -show_state normal -rect {{0 0} {364 326}}
-gui_update_layout -id ${Source.1} {{left 0} {top 0} {width 369} {height 351} {show_state normal} {dock_state undocked} {dock_on_new_line false}}
+set Source.1 [gui_create_window -type {Source}  -parent ${TopLevel.2}]
+gui_show_window -window ${Source.1} -show_state maximized
+gui_update_layout -id ${Source.1} {{show_state maximized} {dock_state undocked} {dock_on_new_line false}}
 
 # End MDI window settings
 
-gui_set_env TOPLEVELS::TARGET_FRAME(Source) ${TopLevel.1}
-gui_set_env TOPLEVELS::TARGET_FRAME(Schematic) ${TopLevel.1}
-gui_set_env TOPLEVELS::TARGET_FRAME(PathSchematic) ${TopLevel.1}
+gui_set_env TOPLEVELS::TARGET_FRAME(Source) none
+gui_set_env TOPLEVELS::TARGET_FRAME(Schematic) none
+gui_set_env TOPLEVELS::TARGET_FRAME(PathSchematic) none
 gui_set_env TOPLEVELS::TARGET_FRAME(Wave) none
 gui_set_env TOPLEVELS::TARGET_FRAME(List) none
-gui_set_env TOPLEVELS::TARGET_FRAME(Memory) ${TopLevel.1}
+gui_set_env TOPLEVELS::TARGET_FRAME(Memory) none
 gui_set_env TOPLEVELS::TARGET_FRAME(DriverLoad) none
-gui_update_statusbar_target_frame ${TopLevel.1}
+gui_update_statusbar_target_frame ${TopLevel.2}
 
 #</WindowLayout>
 
@@ -177,11 +155,11 @@ gui_update_statusbar_target_frame ${TopLevel.1}
 # DVE Open design session: 
 
 if { [llength [lindex [gui_get_db -design Sim] 0]] == 0 } {
-gui_set_env SIMSETUP::SIMARGS {{-vpd_file /tmp/inter.vpd}}
-gui_set_env SIMSETUP::SIMEXE {out/simv}
+gui_set_env SIMSETUP::SIMARGS {{-ucligui -vpd_file /tmp/inter.vpd}}
+gui_set_env SIMSETUP::SIMEXE {/users/students/r0666113/Documents/CPAED/sync1/out/simv}
 gui_set_env SIMSETUP::ALLOW_POLL {0}
-if { ![gui_is_db_opened -db {/users/students/r0669247/Documents/CPAED/resp/CPAED/out/simv}] } {
-gui_sim_run Ucli -exe simv -args { -vpd_file /tmp/inter.vpd -ucligui} -dir /users/students/r0669247/Documents/CPAED/resp/CPAED/out -nosource
+if { ![gui_is_db_opened -db {/users/students/r0666113/Documents/CPAED/sync1/out/simv}] } {
+gui_sim_run Ucli -exe simv -args {-ucligui -vpd_file /tmp/inter.vpd} -dir /users/students/r0666113/Documents/CPAED/sync1/out -nosource
 }
 }
 if { ![gui_sim_state -check active] } {error "Simulator did not start correctly" error}
@@ -213,7 +191,7 @@ gui_change_stack_mode -mode list
 # Post database loading setting...
 
 # Restore C1 time
-gui_set_time -C1_only 816889105000
+gui_set_time -C1_only 0
 
 
 
@@ -232,45 +210,24 @@ gui_set_loading_session_type noSession
 # DVE View/pane content session: 
 
 
-# Hier 'Hier.1'
-gui_show_window -window ${Hier.1}
-gui_list_set_filter -id ${Hier.1} -list { {Package 1} {All 0} {Process 1} {VirtPowSwitch 0} {UnnamedProcess 1} {UDP 0} {Function 1} {Block 1} {SrsnAndSpaCell 0} {OVA Unit 1} {LeafScCell 1} {LeafVlgCell 1} {Interface 1} {LeafVhdCell 1} {$unit 1} {NamedBlock 1} {Task 1} {VlgPackage 1} {ClassDef 1} {VirtIsoCell 0} }
-gui_list_set_filter -id ${Hier.1} -text {*}
-gui_hier_list_init -id ${Hier.1}
-gui_change_design -id ${Hier.1} -design Sim
-catch {gui_list_select -id ${Hier.1} {tbench_top}}
-gui_view_scroll -id ${Hier.1} -vertical -set 0
-gui_view_scroll -id ${Hier.1} -horizontal -set 0
-
-# Class 'Class.1'
-gui_list_set_filter -id ${Class.1} -list { {OVM 1} {VMM 1} {All 1} {Object 1} {UVM 1} {RVM 1} }
-gui_list_set_filter -id ${Class.1} -text {*}
-gui_change_design -id ${Class.1} -design Sim
-
-# Member 'Member.1'
-gui_list_set_filter -id ${Member.1} -list { {InternalMember 0} {RandMember 1} {All 0} {BaseMember 0} {PrivateMember 1} {LibBaseMember 0} {AutomaticMember 1} {VirtualMember 1} {PublicMember 1} {ProtectedMember 1} {OverRiddenMember 0} {InterfaceClassMember 1} {StaticMember 1} }
-gui_list_set_filter -id ${Member.1} -text {*}
-
-# Data 'Data.1'
-gui_list_set_filter -id ${Data.1} -list { {Buffer 1} {Input 1} {Others 1} {Linkage 1} {Output 1} {LowPower 1} {Parameter 1} {All 1} {Aggregate 1} {LibBaseMember 1} {Event 1} {Assertion 1} {Constant 1} {Interface 1} {BaseMembers 1} {Signal 1} {$unit 1} {Inout 1} {Variable 1} }
-gui_list_set_filter -id ${Data.1} -text {*}
-gui_list_show_data -id ${Data.1} {tbench_top}
-gui_view_scroll -id ${Data.1} -vertical -set 0
-gui_view_scroll -id ${Data.1} -horizontal -set 0
-gui_view_scroll -id ${Hier.1} -vertical -set 0
-gui_view_scroll -id ${Hier.1} -horizontal -set 0
-
 # Source 'Source.1'
 gui_src_value_annotate -id ${Source.1} -switch false
 gui_set_env TOGGLE::VALUEANNOTATE 0
-gui_open_source -id ${Source.1}  -replace -active tbench_top.dut.ext_mem /users/students/r0669247/Documents/CPAED/resp/CPAED/src/rtl_building_blocks/device/memory.sv
-gui_view_scroll -id ${Source.1} -vertical -set 255
+gui_view_scroll -id ${Source.1} -vertical -set 0
 gui_src_set_reusable -id ${Source.1}
-# Warning: Class view not found.
+
+# Hier 'Hier.2'
+gui_show_window -window ${Hier.2}
+gui_list_set_filter -id ${Hier.2} -list { {Package 1} {All 0} {Process 1} {VirtPowSwitch 0} {UnnamedProcess 1} {UDP 0} {Function 1} {Block 1} {SrsnAndSpaCell 0} {OVA Unit 1} {LeafScCell 1} {LeafVlgCell 1} {Interface 1} {LeafVhdCell 1} {$unit 1} {NamedBlock 1} {Task 1} {VlgPackage 1} {ClassDef 1} {VirtIsoCell 0} }
+gui_list_set_filter -id ${Hier.2} -text {*}
+gui_hier_list_init -id ${Hier.2}
+gui_change_design -id ${Hier.2} -design Sim
+gui_view_scroll -id ${Hier.2} -vertical -set 0
+gui_view_scroll -id ${Hier.2} -horizontal -set 0
 # Restore toplevel window zorder
 # The toplevel window could be closed if it has no view/pane
-if {[gui_exist_window -window ${TopLevel.1}]} {
-	gui_set_active_window -window ${TopLevel.1}
+if {[gui_exist_window -window ${TopLevel.2}]} {
+	gui_set_active_window -window ${TopLevel.2}
 	gui_set_active_window -window ${Source.1}
 }
 #</Session>
