@@ -1,0 +1,119 @@
+{
+    "Modules": {
+        "...MASTER...": {},
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 8
+        },
+        "top_system": {
+            "Compiled": "Yes",
+            "Compiled Times": 8
+        },
+        "vcs_paramclassrepository": {
+            "Compiled": "Yes",
+            "Compiled Times": 8
+        },
+        "_vcs_unit__3113707226": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "multiplier": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "adder": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "register": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "tbench_top": {
+            "Compiled": "Yes",
+            "Compiled Times": 8
+        },
+        "register_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 6
+        },
+        "intf": {
+            "Compiled": "Yes",
+            "Compiled Times": 8
+        },
+        "testprogram": {
+            "Compiled": "Yes",
+            "Compiled Times": 8
+        }
+    },
+    "ObjArchives": [
+        {
+            "size": 314278,
+            "archive": "archive.7/_740160_archive_1.a",
+            "objects": [
+                [
+                    "hEeZs_d.o",
+                    225281
+                ],
+                [
+                    "arjKm_d.o",
+                    12153
+                ],
+                [
+                    "amcQwB.o",
+                    76844
+                ]
+            ]
+        }
+    ],
+    "CompUnits": {
+        "hEeZs_d": {
+            "mod": "vcs_paramclassrepository",
+            "out": "hEeZs_d.o",
+            "checksum": 0,
+            "bytes": 225281,
+            "mode": 4,
+            "archive": "archive.7/_740160_archive_1.a"
+        },
+        "arjKm_d": {
+            "mod": "testprogram",
+            "out": "arjKm_d.o",
+            "checksum": 0,
+            "bytes": 12153,
+            "mode": 4,
+            "archive": "archive.7/_740160_archive_1.a"
+        }
+    },
+    "reusePaths": {
+        "amcQw_d": {
+            "icPath": "../csrc"
+        },
+        "reYIK_d": {
+            "icPath": "../csrc"
+        },
+        "rCz2v_d": {
+            "icPath": "../csrc"
+        },
+        "Qq4Ev_d": {
+            "icPath": "../csrc"
+        },
+        "zkDLe_d": {
+            "icPath": "../csrc"
+        },
+        "N3bug_d": {
+            "icPath": "../csrc"
+        },
+        "m6KP2_d": {
+            "icPath": "../csrc"
+        },
+        "DAC4W_d": {
+            "icPath": "../csrc"
+        },
+        "k6LTY_d": {
+            "icPath": "../csrc"
+        },
+        "Mk7In_d": {
+            "icPath": "../csrc"
+        }
+    }
+}

@@ -1,40 +1,6 @@
 {
-    "vcs_paramclassrepository": [
-        "vcs_paramclassrepository",
-        "hEeZs",
-        "module",
-        1
-    ],
-    "_vcs_unit__3113707226": [
-        "_vcs_unit__3113707226",
-        "rCz2v",
-        "module",
-        10
-    ],
-    "std": [
-        "std",
-        "reYIK",
-        "module",
-        3
-    ],
-    "register_0000": [
-        "register_0000",
-        "N3bug",
-        "module",
-        2
-    ],
-    "adder": [
-        "adder",
-        "Qq4Ev",
-        "module",
-        11
-    ],
-    "top_system": [
-        "top_system",
-        "zkDLe",
-        "module",
-        5
-    ],
+<<<<<<< HEAD
+=======
     "intf": [
         "intf",
         "k6LTY",
@@ -47,23 +13,75 @@
         "module",
         12
     ],
+>>>>>>> 014fa35fe15b99fad279a8a0c89b69d4b422fedd
+    "vcs_paramclassrepository": [
+        "vcs_paramclassrepository",
+        "hEeZs",
+        "module",
+        1
+    ],
+    "top_system": [
+        "top_system",
+        "zkDLe",
+        "module",
+        5
+    ],
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        3
+    ],
+<<<<<<< HEAD
+    "_vcs_unit__3113707226": [
+        "_vcs_unit__3113707226",
+        "rCz2v",
+        "module",
+        10
+    ],
+    "multiplier": [
+        "multiplier",
+        "m6KP2",
+        "module",
+        12
+    ],
+=======
+>>>>>>> 014fa35fe15b99fad279a8a0c89b69d4b422fedd
+    "adder": [
+        "adder",
+        "Qq4Ev",
+        "module",
+        11
+    ],
     "register": [
         "register",
         "DAC4W",
         "module",
         4
     ],
-    "testprogram": [
-        "testprogram",
-        "arjKm",
-        "module",
-        7
-    ],
     "tbench_top": [
         "tbench_top",
         "Mk7In",
         "module",
         8
+    ],
+    "register_0000": [
+        "register_0000",
+        "N3bug",
+        "module",
+        2
+    ],
+    "top_system": [
+        "top_system",
+        "zkDLe",
+        "module",
+        5
+    ],
+    "testprogram": [
+        "testprogram",
+        "arjKm",
+        "module",
+        7
     ],
     "...MASTER...": [
         "SIM",
