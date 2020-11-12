@@ -1,5 +1,5 @@
 =======================DVE Context and Call Stack=========================
-Command line: /esat/micas-data/software/Synopsys/vcs_2017.03/gui/dve/linux64/bin/dve.exe -full64 -ucliplatform=linux64 -toolargs "-ucligui -toolexe out/simv -vpd_file /tmp/inter.vpd  -pid 301729" -toolin /tmp/vcs_20201106082607_301725_r0666113..stdin -toolout /tmp/vcs_20201106082607_301725_r0666113..stdout
+Command line: /esat/micas-data/software/Synopsys/vcs_2017.03/gui/dve/linux64/bin/dve.exe -full64 -ucliplatform=linux64 -toolargs "-ucligui -toolexe out/simv -vpd_file /tmp/inter.vpd  -pid 1684638" -toolin /tmp/vcs_20201110221114_1684634_r0669247..stdin -toolout /tmp/vcs_20201110221114_1684634_r0669247..stdout
 
 --- Stack trace follows:
 Could not find platform independent libraries <prefix>
@@ -12,8 +12,8 @@ Could not load the Python gdb module from `/esat/micas-data/software/Synopsys/vc
 Limited Python support is available from the _gdb module.
 Suggest passing --data-directory=/path/to/gdb/data-directory.
 
-[New LWP 301745]
-[New LWP 301747]
+[New LWP 1684722]
+[New LWP 1684724]
 [Thread debugging using libthread_db enabled]
 Using host libthread_db library "/lib64/libthread_db.so.1".
 
@@ -88,7 +88,7 @@ Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_u
 Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
 Python Exception <type 'exceptions.ImportError'> No module named traceback: 
 
-Thread 3 (Thread 0x7fffecdd7700 (LWP 301747)):
+Thread 3 (Thread 0x7fffecdd7700 (LWP 1684724)):
 #0  0x00007ffff4846ab4 in read () from /lib64/libc.so.6
 #1  0x00007ffff47d7ac8 in __GI__IO_file_underflow () from /lib64/libc.so.6
 Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
@@ -109,7 +109,7 @@ Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_u
 Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
 Python Exception <type 'exceptions.ImportError'> No module named traceback: 
 
-Thread 2 (Thread 0x7fffed5ea700 (LWP 301745)):
+Thread 2 (Thread 0x7fffed5ea700 (LWP 1684722)):
 #0  0x00007ffff5f5f48c in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
 #1  0x00007ffff570e7f5 in ?? () from /lib64/libX11.so.6
 Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
@@ -154,7 +154,7 @@ Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_u
 Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
 Python Exception <type 'exceptions.ImportError'> No module named traceback: 
 
-Thread 1 (Thread 0x7ffff7fc3640 (LWP 301744)):
+Thread 1 (Thread 0x7ffff7fc3640 (LWP 1684653)):
 #0  0x00007ffff4821f82 in waitpid () from /lib64/libc.so.6
 #1  0x00007ffff479e83f in do_system () from /lib64/libc.so.6
 Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
@@ -194,7 +194,7 @@ Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_u
 Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
 #19 0x00000000029c36fa in QApplication::notify(QObject*, QEvent*) ()
 Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
-#20 0x00000000020be5a2 in EkExtQtApp::notify(QObject*, QEvent*) ()
+#20 0x00000000020be363 in EkExtQtApp::notify(QObject*, QEvent*) ()
 Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
 #21 0x000000000208e55c in ag::baseQtApp::notify(QObject*, QEvent*) ()
 Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
@@ -208,13 +208,47 @@ Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_u
 Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
 #26 0x00000000029d3d39 in QEventLoop::enterLoop() ()
 Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
-#27 0x00000000029d3cba in QEventLoop::exec() ()
+#27 0x0000000002b47bcb in QDialog::exec() ()
 Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
-#28 0x000000000115a3f9 in run_cci_event_loop ()
+#28 0x0000000001126374 in ag::ovaAppInst::popUpExitDialog(bool&, bool) ()
 Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
-#29 0x000000000111860c in ag::ovaAppInst::enterEventLoop(int, char**) ()
+#29 0x000000000114bc1d in ag::ovaAppInst::bigExit(bool) ()
 Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
-#30 0x0000000000dd06c5 in main ()
+#30 0x00000000020b15e6 in ag::CAppSpecificHooks::onCloseTopLevel(EkBaseWndInst*) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#31 0x000000000228eb7c in EkToplevelWindow::closeEvent(QCloseEvent*) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#32 0x000000000127e58d in ag::wndTopLevel::closeEvent(QCloseEvent*) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#33 0x0000000002a3c9b2 in QWidget::event(QEvent*) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#34 0x00000000029c33c5 in QApplication::internalNotify(QObject*, QEvent*) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#35 0x00000000029c36fa in QApplication::notify(QObject*, QEvent*) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#36 0x00000000020be5a2 in EkExtQtApp::notify(QObject*, QEvent*) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#37 0x000000000208e55c in ag::baseQtApp::notify(QObject*, QEvent*) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#38 0x0000000002a3ab82 in QWidget::close(bool) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#39 0x000000000296ebf3 in QApplication::x11ClientMessage(QWidget*, _XEvent*, bool) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#40 0x000000000297848e in QApplication::x11ProcessEvent(_XEvent*) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#41 0x0000000002986842 in QEventLoop::processEvents(unsigned int) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#42 0x000000000115aa52 in ag::ovaEventLoop::processEvents(unsigned int) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#43 0x00000000029d3d39 in QEventLoop::enterLoop() ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#44 0x00000000029d3cba in QEventLoop::exec() ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#45 0x000000000115a3f9 in run_cci_event_loop ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#46 0x000000000111860c in ag::ovaAppInst::enterEventLoop(int, char**) ()
+Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
+#47 0x0000000000dd06c5 in main ()
 Python Exception <type 'exceptions.NameError'> Installation error: gdb.execute_unwinders function is missing: 
 No context available
 ==========================================================================

@@ -1,6 +1,6 @@
 #!/bin/sh -h 
 
-FILE_PATH="/users/students/r0666113/Documents/CPAED/sync1/src/../out/simv.daidir/debug_dump/fsearch"
+FILE_PATH="/users/students/r0669247/Documents/CPAED/resp/CPAED/src/../out/simv.daidir/debug_dump/fsearch"
 lockfile="${FILE_PATH}"/lock
 
 FSearch_lock_release() {
@@ -28,17 +28,17 @@ if [ "${dir_name}" = "." ]; then
     cd $dir_name
     dir_name=`/bin/pwd`
 fi
-if [ -d "$dir_name"/../../../../../../../../../../../.. ]; then
-    cd "$dir_name"/../../../../../../../../../../../..
+if [ -d "$dir_name"/../../../../../../../../../../../../.. ]; then
+    cd "$dir_name"/../../../../../../../../../../../../..
 fi
 
-if [ -f "/users/students/r0666113/Documents/CPAED/sync1/src/../out/simv.daidir/debug_dump/fsearch/.create_fsearch_db" ]; then
-    if [ ! -f "/users/students/r0666113/Documents/CPAED/sync1/src/../out/simv.daidir/debug_dump/fsearch/fsearch.db" ]; then
+if [ -f "/users/students/r0669247/Documents/CPAED/resp/CPAED/src/../out/simv.daidir/debug_dump/fsearch/.create_fsearch_db" ]; then
+    if [ ! -f "/users/students/r0669247/Documents/CPAED/resp/CPAED/src/../out/simv.daidir/debug_dump/fsearch/fsearch.db" ]; then
         if [ "$#" -eq 1 ] && [ "x$1" == "x-background" ]; then
             trap FSearch_lock_release EXIT
             (
                 flock 193
-                create_fsearch_db_ctrl "/users/students/r0666113/Documents/CPAED/sync1/src/../out/simv.daidir/debug_dump/fsearch/.create_fsearch_db"
+                create_fsearch_db_ctrl "/users/students/r0669247/Documents/CPAED/resp/CPAED/src/../out/simv.daidir/debug_dump/fsearch/.create_fsearch_db"
                 exit 193
             ) 193> "$lockfile"
             rstat=$?
@@ -46,9 +46,9 @@ if [ -f "/users/students/r0666113/Documents/CPAED/sync1/src/../out/simv.daidir/d
                 exit $rstat
             fi
         else
-            "/users/students/r0666113/Documents/CPAED/sync1/src/../out/simv.daidir/debug_dump/fsearch/.create_fsearch_db"
+            "/users/students/r0669247/Documents/CPAED/resp/CPAED/src/../out/simv.daidir/debug_dump/fsearch/.create_fsearch_db"
         fi
-    elif [ -f "/users/students/r0666113/Documents/CPAED/sync1/src/../out/simv.daidir/debug_dump/fsearch/fsearch.stat" ]; then
-       rm -f "/users/students/r0666113/Documents/CPAED/sync1/src/../out/simv.daidir/debug_dump/fsearch/fsearch.stat"
+    elif [ -f "/users/students/r0669247/Documents/CPAED/resp/CPAED/src/../out/simv.daidir/debug_dump/fsearch/fsearch.stat" ]; then
+       rm -f "/users/students/r0669247/Documents/CPAED/resp/CPAED/src/../out/simv.daidir/debug_dump/fsearch/fsearch.stat"
     fi
 fi

@@ -14,47 +14,89 @@ synopsys::dump -autoflush on -fid VPD0
 set ::dve_fid VPD0
 synUtils::setDVEInitPhase 0
 ucliCore::getToolPID
-synUtils::sendTool -active _icl_setToolSocket /tmp/smlnpu6rszm
-synUtils::sendTool -active {_icl_start_rpc -version "M-2017.03_Full64" -sync_file /tmp/vcs_dve_rpc.r0666113.301729}
-synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.r0666113.301729}
+synUtils::sendTool -active _icl_setToolSocket /tmp/smlnpvUxRXu
+synUtils::sendTool -active {_icl_start_rpc -version "M-2017.03_Full64" -sync_file /tmp/vcs_dve_rpc.r0669247.1798478}
+synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.r0669247.1798478}
 config endofsim noexit
 config onfail enable all
 config syscaddplainmembers
 config syscaddsourcenames
 config syscaddstructtypes
 synopsys::listing -disable
+synopsys::run
+set ucliGUI::state
+set ucliGUI::state
+set synopsys::env(time) 5651045000
+set synopsys::env(time) 11307565000
+set synopsys::env(time) 17106365000
+set synopsys::env(time) 22717087000
+set synopsys::env(time) 28515550000
+set synopsys::env(time) 34299505000
+set synopsys::env(time) 39887377000
+set synopsys::env(time) 45668265000
+set synopsys::env(time) 70388675000
+set synopsys::env(time) 101567435000
+set synopsys::env(time) 132744865000
+set synopsys::env(time) 163951435000
+set synopsys::env(time) 195140355000
+set synopsys::env(time) 226354220000
+set synopsys::env(time) 257546015000
+set synopsys::env(time) 288733595000
+set synopsys::env(time) 318852690000
+set synopsys::env(time) 350026165000
+set synopsys::env(time) 381251145000
+set synopsys::env(time) 412361890000
+set synopsys::env(time) 443536955000
+set synopsys::env(time) 474687745000
+set synopsys::env(time) 505887955000
+set synopsys::env(time) 537113345000
+set synopsys::env(time) 568311285000
+set synopsys::env(time) 599494945000
+set synopsys::env(time) 630655360000
+set synopsys::env(time) 661804650000
+set synopsys::env(time) 692979030000
+set synopsys::env(time) 724077885000
+ucliCore::getToolPID
+ucliCore::stopTool -no_signal
+set ucliGUI::state
+set ucliGUI::state
+synopsys::xml get_stop_data
+synopsys::xml {frames <data updateType="preserve" itemId="none" viewId="Stack.1" />}
+synopsys::xml {locals <data updateType="preserve" itemId="none" frame_id="frame(16:0:2)" viewId="Local.1" />}
 synopsys::dump -add {tbench_top.intf_i } -aggregates  -fid VPD0
-synopsys::dump -add {tbench_top.intf_i.tb } -aggregates  -fid VPD0
-ucliGUI::getSignalValues -scope tbench_top -radix {decimal } -list {EXT_MEM_HEIGHT }
-ucliGUI::getSignalValues -scope tbench_top -radix {decimal } -list {ACCUMULATION_WIDTH }
-ucliGUI::getSignalValues -scope tbench_top.dut -radix {hexadecimal } -list {{ext_mem_write_addr[19:0]} }
-ucliGUI::getSignalValues -scope tbench_top.dut -radix {hexadecimal } -list {{ext_mem_din[31:0]} }
-ucliGUI::getSignalValues -scope tbench_top.dut -radix {binary } -list {ext_mem_write_en }
-ucliGUI::getSignalValues -scope tbench_top.dut -radix {hexadecimal } -list {{ext_mem_qout[31:0]} }
-ucliGUI::getSignalValues -scope tbench_top.dut -radix {hexadecimal } -list {{ext_mem_read_addr[19:0]} }
-ucliGUI::getSignalValues -scope tbench_top.dut -radix {decimal } -list {IO_DATA_WIDTH }
-ucliGUI::getSignalValues -scope tbench_top.dut -radix {decimal } -list {EXT_MEM_WIDTH }
-ucliGUI::getSignalValues -scope tbench_top.dut -radix {decimal } -list {EXT_MEM_HEIGHT }
-ucliGUI::getSignalValues -scope tbench_top.dut -radix {decimal } -list {ACCUMULATION_WIDTH }
-ucliGUI::getSignalValues -scope tbench_top.dut -radix {binary } -list {clk }
-ucliGUI::vpdAddHierarchy -scope tbench_top.dut.ext_mem -depth 1 -file /tmp/inter.vpd; synopsys::dump -flush VPD0
-synopsys::dump -add {tbench_top.dut.ext_mem.HEIGHT} -aggregates  -fid VPD0
-synopsys::dump -add {tbench_top.dut.ext_mem.read_addr} -aggregates  -fid VPD0
-ucliGUI::getSignalValues -scope tbench_top.dut.ext_mem -radix {binary } -list {write_en }
-ucliGUI::getSignalValues -scope tbench_top.dut.ext_mem -radix {hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal } -list {{data[0]} {data[1]} {data[2]} {data[3]} {data[4]} {data[5]} {data[6]} {data[7]} {data[8]} {data[9]} {data[10]} {data[11]} {data[12]} {data[13]} {data[14]} {data[15]} }
-ucliGUI::getSignalValues -scope tbench_top.dut.ext_mem -radix {binary } -list {clk }
-ucliGUI::getSignalValues -scope tbench_top.dut.ext_mem -radix {hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal hexadecimal } -list {{data[0]} {data[1]} {data[2]} {data[3]} {data[4]} {data[5]} {data[6]} {data[7]} {data[8]} {data[9]} {data[10]} {data[11]} {data[12]} {data[13]} {data[14]} {data[15]} }
-ucliGUI::getSignalValues -scope tbench_top.dut.ext_mem -radix {decimal } -list {WIDTH }
-ucliGUI::getSignalValues -scope tbench_top.dut.ext_mem -radix {hexadecimal } -list {{din[31:0]} }
-ucliGUI::getSignalValues -scope tbench_top.dut.ext_mem -radix {decimal } -list {HEIGHT }
-synopsys::dump -add {tbench_top.dut.ext_mem.write_addr} -aggregates  -fid VPD0
-ucliGUI::getSignalValues -scope tbench_top.dut -radix {binary } -list {b_valid }
-ucliGUI::getSignalValues -scope tbench_top.dut -radix {binary } -list {a_ready }
-synopsys::dump -add {tbench_top.dut.FEATURE_MAP_WIDTH} -aggregates  -fid VPD0
-ucliGUI::getSignalValues -scope tbench_top.dut -radix {binary } -list {ext_mem_read_en }
-ucliGUI::getSignalValues -scope tbench_top.dut -radix {decimal } -list {FEATURE_MAP_WIDTH }
-ucliGUI::getSignalValues -scope tbench_top.dut -radix {decimal } -list {FEATURE_MAP_HEIGHT }
-ucliGUI::getSignalValues -scope tbench_top.dut -radix {decimal } -list {OUTPUT_NB_CHANNELS }
-ucliGUI::getSignalValues -scope tbench_top.dut -radix {binary } -list {start }
-ucliGUI::getSignalValues -scope tbench_top.dut -radix {hexadecimal } -list {{b_input[15:0]} }
-ucliGUI::getSignalValues -scope tbench_top.dut -radix {decimal } -list {INPUT_NB_CHANNELS }
+synopsys::next
+set ucliGUI::state
+set ucliGUI::state
+synopsys::xml get_stop_data
+synopsys::xml {frames <data updateType="preserve" itemId="none" viewId="Stack.1" > <item frame_id="frame(tbench_top.t1)" /></data>}
+synopsys::xml {locals <data updateType="preserve" itemId="none" frame_id="frame(16:0:2)" viewId="Local.1" />}
+synopsys::run
+set ucliGUI::state
+set ucliGUI::state
+set synopsys::env(time) 761234375000
+set synopsys::env(time) 773577585000
+set synopsys::env(time) 785815640000
+ucliCore::getToolPID
+ucliCore::stopTool -no_signal
+set ucliGUI::state
+set ucliGUI::state
+synopsys::xml get_stop_data
+synopsys::xml {frames <data updateType="preserve" itemId="none" viewId="Stack.1" > <item frame_id="frame(tbench_top.t1)" /></data>}
+synopsys::xml {locals <data updateType="preserve" itemId="none" frame_id="frame(16:0:2)" viewId="Local.1" />}
+synopsys::run
+set ucliGUI::state
+set ucliGUI::state
+set synopsys::env(time) 804201095000
+set synopsys::env(time) 816480355000
+ucliCore::getToolPID
+ucliCore::stopTool -no_signal
+set ucliGUI::state
+set ucliGUI::state
+synopsys::xml get_stop_data
+synopsys::xml {frames <data updateType="preserve" itemId="none" viewId="Stack.1" > <item frame_id="frame(tbench_top.t1)" /></data>}
+synopsys::xml {locals <data updateType="preserve" itemId="none" frame_id="frame(16:0:2)" viewId="Local.1" />}
+if [catch {gui_sim_terminate}] {gui_sim_terminate -kill}
+synopsys::finish
+set ucliGUI::state
+set ucliGUI::state
+ucli_exit

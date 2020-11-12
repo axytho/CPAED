@@ -1,7 +1,7 @@
 rc file Version 1.0
 
 [Design]
-COMPILE_PATH=/users/students/r0666113/Documents/CPAED/sync1/src
+COMPILE_PATH=/users/students/r0669247/Documents/CPAED/resp/CPAED/src
 SystemC=FALSE
 UUM=FALSE
 KDB=FALSE

@@ -1,5 +1,5 @@
 0 
-31
+33
 +notimingchecks
 -Mamsrun=
 -Masflags=
@@ -19,6 +19,7 @@
 -Mvcsaceobjs=
 -Mxcflags= -pipe -fPIC -I/esat/micas-data/software/Synopsys/vcs_2017.03/include
 -Xnotice=1
+-cm
 -f sourcefile_order
 -full64
 -gen_obj
@@ -30,17 +31,18 @@
 -top
 ../log/compile
 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/bin/vcs1
+line+cond+fsm+tgl+branch
 tbench_top
-68
-sysc_uni_pwd=/users/students/r0666113/Documents/CPAED/sync1/src
+67
+sysc_uni_pwd=/users/students/r0669247/Documents/CPAED/resp/CPAED/src
 XMODIFIERS=@im=ibus
-XDG_SESSION_ID=11
-XDG_RUNTIME_DIR=/run/user/281497
+XDG_SESSION_ID=35
+XDG_RUNTIME_DIR=/run/user/230630
 XDG_MENU_PREFIX=gnome-
-XDG_DATA_DIRS=/users/students/r0666113/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+XDG_DATA_DIRS=/users/students/r0669247/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 XDG_CURRENT_DESKTOP=GNOME
 VTE_VERSION=5202
-VNCDESKTOP=pc-klas4-14.esat.kuleuven.be:1 (r0666113)
+VNCDESKTOP=pc-klas4-1.esat.kuleuven.be:1 (r0669247)
 VMR_MODE_FLAG=64
 VCS_MODE_FLAG=64
 VCS_LOG_FILE=../log/compile
@@ -52,13 +54,13 @@ VCS_ARCH=linux64
 UNAME=/bin/uname
 TOOL_HOME=/esat/micas-data/software/Synopsys/vcs_2017.03/linux64
 S_COLORS=auto
-SSH_TTY=/dev/pts/1
-SSH_CONNECTION=10.87.20.118 33948 10.87.20.118 22
-SSH_CLIENT=10.87.20.118 33948 22
-SSH_AUTH_SOCK=/run/user/281497/keyring/ssh
-SSH_AGENT_PID=517754
+SSH_TTY=/dev/pts/0
+SSH_CONNECTION=134.58.56.167 38714 10.87.20.104 22
+SSH_CLIENT=134.58.56.167 38714 22
+SSH_AUTH_SOCK=/run/user/230630/keyring/ssh
+SSH_AGENT_PID=1791907
 SNPS_VCS_CLANG_PATH=/fs/src/interfaces/LLVM_Project/QSCM/opt/llvm-3.9.1/linux64
-SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/517719,unix/unix:/tmp/.ICE-unix/517719
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/1791872,unix/unix:/tmp/.ICE-unix/1791872
 SELINUX_USE_CURRENT_RANGE=
 SELINUX_ROLE_REQUESTED=
 SELINUX_LEVEL_REQUESTED=
@@ -73,8 +75,8 @@ MODULEPATH_modshare=/usr/share/modulefiles:1:/etc/modulefiles:1:/usr/share/Modul
 MODULEPATH=/etc/scl/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles
 MICAS_LICENSE_FILE=/users/micas/micas/license/license.dat
 MFLAGS=
-MAKE_TERMOUT=/dev/pts/0
-MAKE_TERMERR=/dev/pts/0
+MAKE_TERMOUT=/dev/pts/2
+MAKE_TERMERR=/dev/pts/2
 MAKELEVEL=1
 MAKEFLAGS=
 MAILCHECK=0
@@ -85,53 +87,53 @@ KRB5CCNAME=KCM:
 KDEDIRS=/usr
 HISTCONTROL=ignoredups
 GS_OPTIONS=-sPAPERSIZE=a4
-GNOME_TERMINAL_SERVICE=:1.71
-GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/8d258a9c_1a68_4828_a5a4_42e3eb27436f
+GNOME_TERMINAL_SERVICE=:1.72
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/5d631ed5_8b07_4510_a699_fb27551c768d
 GNOME_DESKTOP_SESSION_ID=this-is-deprecated
 GJS_DEBUG_TOPICS=JS ERROR;JS LOG
 GJS_DEBUG_OUTPUT=stderr
 ESAT_ARCH=linux-x86_64
 ENV=/usr/share/Modules/init/profile.sh
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-dicdA869ZR,guid=9be9143531c614d31149052f5fa8fc36
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-Z3f953qOqN,guid=4108844fb7201ca227ada77f5face01f
 COLORTERM=truecolor
-CDS_LIC_FILE=27002@license-extern
 BASH_FUNC_switchml%%=() {  typeset swfound=1;_ if [ "${MODULES_USE_COMPAT_VERSION:-0}" = '1' ]; then_ typeset swname='main';_ if [ -e /usr/share/Modules/libexec/modulecmd.tcl ]; then_ typeset swfound=0;_ unset MODULES_USE_COMPAT_VERSION;_ fi;_ else_ typeset swname='compatibility';_ if [ -e /usr/share/Modules/libexec/modulecmd-compat ]; then_ typeset swfound=0;_ MODULES_USE_COMPAT_VERSION=1;_ export MODULES_USE_COMPAT_VERSION;_ fi;_ fi;_ if [ $swfound -eq 0 ]; then_ echo "Switching to Modules $swname version";_ source /usr/share/Modules/init/bash;_ else_ echo "Cannot switch to Modules $swname version, command not found";_ return 1;_ fi_}
 BASH_FUNC_scl%%=() {  if [ "$1" = "load" -o "$1" = "unload" ]; then_ eval "module $@";_ else_ /usr/bin/scl "$@";_ fi_}
 BASH_FUNC_module%%=() {  unset _mlre _mlIFS _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBUG:-0}" = '1' ]; then_ case "$-" in _ *v*x*)_ set +vx;_ _mlshdbg='vx'_ ;;_ *v*)_ set +v;_ _mlshdbg='v'_ ;;_ *x*)_ set +x;_ _mlshdbg='x'_ ;;_ *)_ _mlshdbg=''_ ;;_ esac;_ fi;_ if [ -n "${IFS+x}" ]; then_ _mlIFS=$IFS;_ fi;_ IFS=' ';_ for _mlv in ${MODULES_RUN_QUARANTINE:-};_ do_ if [ "${_mlv}" = "${_mlv##*[!A-Za-z0-9_]}" -a "${_mlv}" = "${_mlv#[0-9]}" ]; then_ if [ -n "`eval 'echo ${'$_mlv'+x}'`" ]; then_ _mlre="${_mlre:-}${_mlv}_modquar='`eval 'echo ${'$_mlv'}'`' ";_ fi;_ _mlrv="MODULES_RUNENV_${_mlv}";_ _mlre="${_mlre:-}${_mlv}='`eval 'echo ${'$_mlrv':-}'`' ";_ fi;_ done;_ if [ -n "${_mlre:-}" ]; then_ eval `eval ${_mlre}/usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash '"$@"'`;_ else_ eval `/usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash "$@"`;_ fi;_ _mlstatus=$?;_ if [ -n "${_mlIFS+x}" ]; then_ IFS=$_mlIFS;_ else_ unset IFS;_ fi;_ if [ -n "${_mlshdbg:-}" ]; then_ set -$_mlshdbg;_ fi;_ unset _mlre _mlv _mlrv _mlIFS _mlshdbg;_ return $_mlstatus_}
 BASH_FUNC__moduleraw%%=() {  unset _mlre _mlIFS _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBUG:-0}" = '1' ]; then_ case "$-" in _ *v*x*)_ set +vx;_ _mlshdbg='vx'_ ;;_ *v*)_ set +v;_ _mlshdbg='v'_ ;;_ *x*)_ set +x;_ _mlshdbg='x'_ ;;_ *)_ _mlshdbg=''_ ;;_ esac;_ fi;_ if [ -n "${IFS+x}" ]; then_ _mlIFS=$IFS;_ fi;_ IFS=' ';_ for _mlv in ${MODULES_RUN_QUARANTINE:-};_ do_ if [ "${_mlv}" = "${_mlv##*[!A-Za-z0-9_]}" -a "${_mlv}" = "${_mlv#[0-9]}" ]; then_ if [ -n "`eval 'echo ${'$_mlv'+x}'`" ]; then_ _mlre="${_mlre:-}${_mlv}_modquar='`eval 'echo ${'$_mlv'}'`' ";_ fi;_ _mlrv="MODULES_RUNENV_${_mlv}";_ _mlre="${_mlre:-}${_mlv}='`eval 'echo ${'$_mlrv':-}'`' ";_ fi;_ done;_ if [ -n "${_mlre:-}" ]; then_ eval `eval ${_mlre}/usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash '"$@"'`;_ else_ eval `/usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash "$@"`;_ fi;_ _mlstatus=$?;_ if [ -n "${_mlIFS+x}" ]; then_ IFS=$_mlIFS;_ else_ unset IFS;_ fi;_ if [ -n "${_mlshdbg:-}" ]; then_ set -$_mlshdbg;_ fi;_ unset _mlre _mlv _mlrv _mlIFS _mlshdbg;_ return $_mlstatus_}
 BASH_ENV=/usr/share/Modules/init/bash
 0
-27
+28
 1487226392 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/packages/lpa/AN.DB
 1487226386 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/packages/upf/AN.DB
-1604935125 test/tbench_top.sv
-1604650986 test/testprogram.sv
-1604650986 test/environment.sv
-1604650986 test/scoreboard.sv
-1604650986 test/checker.sv
-1604650986 test/generator.sv
-1604650986 test/monitor.sv
-1604935214 test/driver.sv
-1604650986 test/transaction.sv
-1604933235 test/intf.sv
-1604650986 test/common.sv
-1604650986 rtl_building_blocks/test/fifo_tb.sv
-1604650986 rtl_building_blocks/test/adder_tb.sv
-1604650986 rtl_building_blocks/test/multiplier_tb.sv
-1604934620 device/top_system.sv
-1604933155 device/top_chip.sv
-1604931079 device/controller_fsm.sv
-1604935300 rtl_building_blocks/device/mac3.sv
-1604927291 rtl_building_blocks/device/mac.sv
-1604650986 rtl_building_blocks/device/fifo.sv
-1604650986 rtl_building_blocks/device/memory.sv
-1604650986 rtl_building_blocks/device/register.sv
-1604650986 rtl_building_blocks/device/multiplier.sv
-1604650986 rtl_building_blocks/device/adder.sv
-1604934024 sourcefile_order
+1605035326 test/tbench_top.sv
+1605035326 test/testprogram.sv
+1605035326 test/environment.sv
+1605167157 test/scoreboard.sv
+1605092422 test/checker.sv
+1605035326 test/generator.sv
+1605035326 test/monitor.sv
+1605166753 test/driver.sv
+1605035326 test/transaction.sv
+1605035326 test/intf.sv
+1605035326 test/common.sv
+1605035326 rtl_building_blocks/test/fifo_tb.sv
+1605035326 rtl_building_blocks/test/adder_tb.sv
+1605035326 rtl_building_blocks/test/multiplier_tb.sv
+1605035326 device/top_system.sv
+1605092188 device/top_chip.sv
+1605035326 device/controller_fsm.sv
+1605035326 rtl_building_blocks/device/mac3.sv
+1605035326 rtl_building_blocks/device/mac.sv
+1605035326 rtl_building_blocks/device/fifo.sv
+1605035326 rtl_building_blocks/device/memory.sv
+1605035326 rtl_building_blocks/device/register.sv
+1605035326 rtl_building_blocks/device/multiplier.sv
+1605035326 rtl_building_blocks/device/adder.sv
+1487217852 /esat/micas-data/software/Synopsys/vcs_2017.03/include/cm_vcsd.tab
+1605035326 sourcefile_order
 4
 0 
 1487220396 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libvirsim.so
 1487219634 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/liberrorinf.so
 1487219608 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libsnpsmalloc.so
-1604935312 ../out/simv.daidir
+1605167172 ../out/simv.daidir
