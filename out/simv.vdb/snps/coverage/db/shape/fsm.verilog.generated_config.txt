@@ -1,6 +1,6 @@
 // Synopsys, Inc.
 // User: r0669247
-// Date: Thu Nov 12 08:46:11 2020
+// Date: Thu Nov 12 08:54:29 2020
 
 // ==================================================================================================
 // This config file prototype is produced from the last run using the complete list of extracted fsms.

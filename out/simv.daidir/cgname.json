@@ -1,16 +1,4 @@
 {
-    "intf": [
-        "intf",
-        "k6LTY",
-        "module",
-        6
-    ],
-    "multiplier": [
-        "multiplier",
-        "m6KP2",
-        "module",
-        12
-    ],
     "vcs_paramclassrepository": [
         "vcs_paramclassrepository",
         "hEeZs",
@@ -29,29 +17,41 @@
         "module",
         3
     ],
-    "adder": [
-        "adder",
-        "Qq4Ev",
-        "module",
-        11
-    ],
-    "register": [
-        "register",
-        "DAC4W",
-        "module",
-        4
-    ],
     "register_0000": [
         "register_0000",
         "N3bug",
         "module",
         2
     ],
+    "adder": [
+        "adder",
+        "Qq4Ev",
+        "module",
+        11
+    ],
     "top_system": [
         "top_system",
         "zkDLe",
         "module",
         5
+    ],
+    "intf": [
+        "intf",
+        "k6LTY",
+        "module",
+        6
+    ],
+    "multiplier": [
+        "multiplier",
+        "m6KP2",
+        "module",
+        12
+    ],
+    "register": [
+        "register",
+        "DAC4W",
+        "module",
+        4
     ],
     "testprogram": [
         "testprogram",

@@ -75,8 +75,8 @@ MODULEPATH_modshare=/usr/share/modulefiles:1:/etc/modulefiles:1:/usr/share/Modul
 MODULEPATH=/etc/scl/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles
 MICAS_LICENSE_FILE=/users/micas/micas/license/license.dat
 MFLAGS=
-MAKE_TERMOUT=/dev/pts/2
-MAKE_TERMERR=/dev/pts/2
+MAKE_TERMOUT=/dev/pts/1
+MAKE_TERMERR=/dev/pts/1
 MAKELEVEL=1
 MAKEFLAGS=
 MAILCHECK=0
@@ -88,7 +88,7 @@ KDEDIRS=/usr
 HISTCONTROL=ignoredups
 GS_OPTIONS=-sPAPERSIZE=a4
 GNOME_TERMINAL_SERVICE=:1.72
-GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/5d631ed5_8b07_4510_a699_fb27551c768d
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/9f9c466c_63c7_481b_8480_80559fd7a045
 GNOME_DESKTOP_SESSION_ID=this-is-deprecated
 GJS_DEBUG_TOPICS=JS ERROR;JS LOG
 GJS_DEBUG_OUTPUT=stderr
@@ -112,7 +112,7 @@ BASH_ENV=/usr/share/Modules/init/bash
 1605092422 test/checker.sv
 1605035326 test/generator.sv
 1605035326 test/monitor.sv
-1605166753 test/driver.sv
+1605167633 test/driver.sv
 1605035326 test/transaction.sv
 1605035326 test/intf.sv
 1605035326 test/common.sv
@@ -136,4 +136,4 @@ BASH_ENV=/usr/share/Modules/init/bash
 1487220396 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libvirsim.so
 1487219634 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/liberrorinf.so
 1487219608 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libsnpsmalloc.so
-1605167172 ../out/simv.daidir
+1605167670 ../out/simv.daidir
