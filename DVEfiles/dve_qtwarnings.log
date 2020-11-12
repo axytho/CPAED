@@ -1,4 +1,1 @@
-QWarning: dve.exe: Fatal IO error: client killed
-QWarning: dve.exe: Fatal IO error: client killed
-QWarning: QPaintDevice: Cannot destroy paint device that is being painted
-QWarning: QThread object destroyed while thread is still running.
+QWarning: QMetaObjectCleanUp::setMetaObject: Double use of QMetaObjectCleanUp!
