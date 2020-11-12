@@ -1,6 +1,6 @@
 psSimBaseName                      	../out/simv
 psLogFileName                      	../log/compile
-pDaiDir                            	/users/students/r0669247/Documents/CPAED/resp/CPAED/src/../out/simv.daidir
+pDaiDir                            	/users/students/r0666113/Documents/CPAED/sync1/src/../out/simv.daidir
 destPath                           	../csrc/
 fSharedMaster                      	0
 hsMainFileCount                    	0
@@ -235,7 +235,7 @@ fHsimNewEvcdObnDrv                 	0
 fHsimEvcdDbgFlags                  	0
 fHsimDumpElabData                  	1
 fHsimNoDeposit                     	0
-fHsimDumpOffsetData                	1
+fHsimDumpOffsetData                	0
 fNoOfsOpt                          	0
 fFlopGlitchDetect                  	0
 fHsimClkGlitch                     	0
@@ -991,6 +991,6 @@ fHsCgOptAllUc                      	0
 fHsimNoReconvergenceSched0         	0
 fHsimCongruencyConfigFile          	0
 fHsimCongruencyLogFile             	0
-fHsimCoverageEnabled               	1
-fHsimCoverageOptions               	279
-fHsimCoverageDir                   	../out/simv.vdb
+fHsimCoverageEnabled               	0
+fHsimCoverageOptions               	0
+fHsimCoverageDir                   	NULL

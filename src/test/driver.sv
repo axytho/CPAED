@@ -89,8 +89,9 @@ class Driver #(config_t cfg);
                   intf_i.cb.b_input1 <= tract_kernel.kernel[ky][1][inch][outch];
                   assert (!$isunknown(tract_kernel.kernel[ky][2][inch][outch]));
                   intf_i.cb.b_input2 <= tract_kernel.kernel[ky][2][inch][outch];
-
-                  @(intf_i.cb iff (intf_i.cb.b_ready & intf_i.cb.a_ready));
+                  @(posedge intf_i.clk);
+                  //@(intf_i.cb iff (intf_i.cb.b_ready & intf_i.cb.a_ready));
+                  @(intf_i.cb)
                   intf_i.cb.b_valid <= 0;
                   intf_i.cb.a_valid <= 0;
                 //end

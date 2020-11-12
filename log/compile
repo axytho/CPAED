@@ -1,12 +1,7 @@
 Command: vcs -full64 -sverilog -timescale=1ns/1ps +notimingchecks -notice -top tbench_top \
--Mdir=../csrc -cm line+cond+fsm+tgl+branch -l ../log/compile -o ../out/simv -f sourcefile_order \
-
+-Mdir=../csrc -l ../log/compile -o ../out/simv -f sourcefile_order
                          Chronologic VCS (TM)
-<<<<<<< HEAD
-         Version M-2017.03_Full64 -- Thu Nov 12 08:52:04 2020
-=======
-         Version M-2017.03_Full64 -- Thu Nov 12 08:46:11 2020
->>>>>>> 014fa35fe15b99fad279a8a0c89b69d4b422fedd
+         Version M-2017.03_Full64 -- Thu Nov 12 09:51:27 2020
                Copyright (c) 1991-2017 by Synopsys Inc.
                          ALL RIGHTS RESERVED
 
@@ -68,7 +63,6 @@ device/top_chip.sv, 85
   Expression: output_ch
   	use +lint=PCWM for more details
 
-VCS Coverage Metrics Release M-2017.03_Full64 Copyright (c) 1991-2017 by Synopsys Inc.
 
 Lint-[PCTI-L] Ports coerced to input
 test/testprogram.sv, 1
@@ -78,62 +72,43 @@ test/testprogram.sv, 1
   Coercing to input.
 
 Starting vcs inline pass...
+
 8 unique modules to generate
 Generating code for _VCSgd_hEeZs
 recompiling package vcs_paramclassrepository
 Generating code for _VCSgd_rCz2v
 Generating code for _VCSgd_reYIK
 Generating code for _VCSgd_Qq4Ev
-recompiling module adder
 Generating code for _VCSgd_m6KP2
-recompiling module multiplier
 Generating code for _VCSgd_DAC4W
-recompiling module register
 Generating code for _VCSgd_N3bug
 Generating code for _VCSgd_zkDLe
-recompiling module top_system
 Generating code for _VCSgd_k6LTY
 recompiling module intf
 Generating code for _VCSgd_arjKm
-recompiling module testprogram
 Generating code for _VCSgd_Mk7In
-<<<<<<< HEAD
 Both modules done.
 	However, due to incremental compilation, only 2 modules need to be compiled. 
 make[1]: Entering directory '/users/students/r0666113/Documents/CPAED/sync1/csrc' \
-=======
-recompiling module tbench_top
-All of 8 modules done
-make[1]: Entering directory '/users/students/r0669247/Documents/CPAED/resp/CPAED/csrc' \
->>>>>>> 014fa35fe15b99fad279a8a0c89b69d4b422fedd
 
 rm -f _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
-if [ -x /users/students/r0669247/Documents/CPAED/resp/CPAED/src/../out/simv ]; then \
-chmod -x /users/students/r0669247/Documents/CPAED/resp/CPAED/src/../out/simv; fi \
-
-g++  -o /users/students/r0669247/Documents/CPAED/resp/CPAED/src/../out/simv   -Wl,-rpath-link=./ \
+ld -shared  -o .//../out/simv.daidir//_csrc0.so objs/amcQw_d.o 
+rm -f _csrc0.so
+if [ -x /users/students/r0666113/Documents/CPAED/sync1/src/../out/simv ]; then chmod \
+-x /users/students/r0666113/Documents/CPAED/sync1/src/../out/simv; fi
+g++  -o /users/students/r0666113/Documents/CPAED/sync1/src/../out/simv   -Wl,-rpath-link=./ \
 -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ -Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir \
-<<<<<<< HEAD
--rdynamic     _740160_archive_1.so _prev_archive_1.so _csrc0.so  SIM_l.o  _csrc0.so \
+-rdynamic     _748973_archive_1.so _prev_archive_1.so _csrc0.so  SIM_l.o  _csrc0.so \
 rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o        \
 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libzerosoft_rt_stubs.so \
-=======
--rdynamic   objs/amcQw_d.o   _1799850_archive_1.so  SIM_l.o       rmapats_mop.o rmapats.o \
-rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o          /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libzerosoft_rt_stubs.so \
->>>>>>> 014fa35fe15b99fad279a8a0c89b69d4b422fedd
 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libvirsim.so /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/liberrorinf.so \
 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libsnpsmalloc.so    /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libvcsnew.so \
-/esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libsimprofile.so /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libreader_common.so \
-/esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libBA.a /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libuclinative.so \
+/esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libsimprofile.so /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libuclinative.so \
 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/vcs_tls.o   -Wl,-whole-archive \
 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libvcsucli.so -Wl,-no-whole-archive \
 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/vcs_save_restore_new.o \
 -ldl  -lc -lm -lpthread -ldl 
-/users/students/r0669247/Documents/CPAED/resp/CPAED/src/../out/simv up to date
-make[1]: Leaving directory '/users/students/r0669247/Documents/CPAED/resp/CPAED/csrc' \
+/users/students/r0666113/Documents/CPAED/sync1/src/../out/simv up to date
+make[1]: Leaving directory '/users/students/r0666113/Documents/CPAED/sync1/csrc' \
 
-<<<<<<< HEAD
-CPU time: .252 seconds to compile + .207 seconds to elab + .110 seconds to link
-=======
-CPU time: .356 seconds to compile + .207 seconds to elab + .108 seconds to link
->>>>>>> 014fa35fe15b99fad279a8a0c89b69d4b422fedd
+CPU time: .254 seconds to compile + .216 seconds to elab + .114 seconds to link

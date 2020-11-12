@@ -2,7 +2,7 @@
 # This file may be modified; VCS will not overwrite it unless -Mupdate is used
 
 # define default verilog source directory 
-VSRC=/users/students/r0669247/Documents/CPAED/resp/CPAED/src
+VSRC=/users/students/r0666113/Documents/CPAED/sync1/src
 
 # Override TARGET_ARCH
 TARGET_ARCH=
@@ -19,7 +19,7 @@ PRODUCT_TIMESTAMP=product_timestamp
 # Path to runtime library
 DEPLIBS=
 VCSUCLI=/esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libvcsucli.so
-RUNTIME=/esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libvcsnew.so /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libsimprofile.so /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libreader_common.so /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libBA.a /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libuclinative.so /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/vcs_tls.o $(DEPLIBS) 
+RUNTIME=/esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libvcsnew.so /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libsimprofile.so /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libuclinative.so /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/vcs_tls.o $(DEPLIBS) 
 
 VCS_SAVE_RESTORE_OBJ=/esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/vcs_save_restore_new.o
 
