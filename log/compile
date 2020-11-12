@@ -1,7 +1,7 @@
 Command: vcs -full64 -sverilog -timescale=1ns/1ps +notimingchecks -notice -top tbench_top \
 -Mdir=../csrc -l ../log/compile -o ../out/simv -f sourcefile_order
                          Chronologic VCS (TM)
-         Version M-2017.03_Full64 -- Mon Nov  9 16:21:51 2020
+         Version M-2017.03_Full64 -- Thu Nov 12 08:52:04 2020
                Copyright (c) 1991-2017 by Synopsys Inc.
                          ALL RIGHTS RESERVED
 
@@ -38,7 +38,7 @@ Top Level Modules:
 TimeScale is 1 ns / 1 ps
 
 Warning-[PCWM-W] Port connection width mismatch
-device/top_chip.sv, 81
+device/top_chip.sv, 85
 "controller_fsm #($clog2(EXT_MEM_HEIGHT), FEATURE_MAP_WIDTH, FEATURE_MAP_HEIGHT, INPUT_NB_CHANNELS, OUTPUT_NB_CHANNELS, KERNEL_SIZE) controller( .clk (clk),  .arst_n_in (arst_n_in),  .start (start),  .running (running),  .mem_we (ext_mem_write_en),  .mem_write_addr (ext_mem_write_addr),  .mem_re (ext_mem_read_en),  .mem_read_addr (ext_mem_read_addr),  .a_valid (a_valid),  .a_ready (a_ready),  .b_valid (b_valid),  .b_ready (b_ready),  .write_a (write_a),  .write_b (write_b),  .mac_valid (mac_valid),  .mac_accumulate_internal (mac_accumulate_internal),  .mac_accumulate_with_0 (mac_accumulate_with_0),  .output_valid (output_valid),  .output_x (output_x),  .output_y (output_y),  .output_ch (output_ch));"
   The following 6-bit expression is connected to 32-bit port "output_x" of 
   module "controller_fsm", instance "controller".
@@ -47,7 +47,7 @@ device/top_chip.sv, 81
 
 
 Warning-[PCWM-W] Port connection width mismatch
-device/top_chip.sv, 81
+device/top_chip.sv, 85
 "controller_fsm #($clog2(EXT_MEM_HEIGHT), FEATURE_MAP_WIDTH, FEATURE_MAP_HEIGHT, INPUT_NB_CHANNELS, OUTPUT_NB_CHANNELS, KERNEL_SIZE) controller( .clk (clk),  .arst_n_in (arst_n_in),  .start (start),  .running (running),  .mem_we (ext_mem_write_en),  .mem_write_addr (ext_mem_write_addr),  .mem_re (ext_mem_read_en),  .mem_read_addr (ext_mem_read_addr),  .a_valid (a_valid),  .a_ready (a_ready),  .b_valid (b_valid),  .b_ready (b_ready),  .write_a (write_a),  .write_b (write_b),  .mac_valid (mac_valid),  .mac_accumulate_internal (mac_accumulate_internal),  .mac_accumulate_with_0 (mac_accumulate_with_0),  .output_valid (output_valid),  .output_x (output_x),  .output_y (output_y),  .output_ch (output_ch));"
   The following 6-bit expression is connected to 32-bit port "output_y" of 
   module "controller_fsm", instance "controller".
@@ -56,7 +56,7 @@ device/top_chip.sv, 81
 
 
 Warning-[PCWM-W] Port connection width mismatch
-device/top_chip.sv, 81
+device/top_chip.sv, 85
 "controller_fsm #($clog2(EXT_MEM_HEIGHT), FEATURE_MAP_WIDTH, FEATURE_MAP_HEIGHT, INPUT_NB_CHANNELS, OUTPUT_NB_CHANNELS, KERNEL_SIZE) controller( .clk (clk),  .arst_n_in (arst_n_in),  .start (start),  .running (running),  .mem_we (ext_mem_write_en),  .mem_write_addr (ext_mem_write_addr),  .mem_re (ext_mem_read_en),  .mem_read_addr (ext_mem_read_addr),  .a_valid (a_valid),  .a_ready (a_ready),  .b_valid (b_valid),  .b_ready (b_ready),  .write_a (write_a),  .write_b (write_b),  .mac_valid (mac_valid),  .mac_accumulate_internal (mac_accumulate_internal),  .mac_accumulate_with_0 (mac_accumulate_with_0),  .output_valid (output_valid),  .output_x (output_x),  .output_y (output_y),  .output_ch (output_ch));"
   The following 5-bit expression is connected to 32-bit port "output_ch" of 
   module "controller_fsm", instance "controller".
@@ -75,6 +75,7 @@ Starting vcs inline pass...
 
 8 unique modules to generate
 Generating code for _VCSgd_hEeZs
+recompiling package vcs_paramclassrepository
 Generating code for _VCSgd_rCz2v
 Generating code for _VCSgd_reYIK
 Generating code for _VCSgd_Qq4Ev
@@ -84,8 +85,10 @@ Generating code for _VCSgd_N3bug
 Generating code for _VCSgd_zkDLe
 Generating code for _VCSgd_k6LTY
 Generating code for _VCSgd_arjKm
+recompiling module testprogram
 Generating code for _VCSgd_Mk7In
-	However, due to incremental compilation, no re-compilation is necessary.
+Both modules done.
+	However, due to incremental compilation, only 2 modules need to be compiled. 
 make[1]: Entering directory '/users/students/r0666113/Documents/CPAED/sync1/csrc' \
 
 rm -f _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
@@ -95,7 +98,7 @@ if [ -x /users/students/r0666113/Documents/CPAED/sync1/src/../out/simv ]; then c
 -x /users/students/r0666113/Documents/CPAED/sync1/src/../out/simv; fi
 g++  -o /users/students/r0666113/Documents/CPAED/sync1/src/../out/simv   -Wl,-rpath-link=./ \
 -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ -Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir \
--rdynamic     _545425_archive_1.so _prev_archive_1.so _csrc0.so  SIM_l.o  _csrc0.so \
+-rdynamic     _740160_archive_1.so _prev_archive_1.so _csrc0.so  SIM_l.o  _csrc0.so \
 rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o        \
 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libzerosoft_rt_stubs.so \
 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libvirsim.so /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/liberrorinf.so \
@@ -108,4 +111,4 @@ rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o       
 /users/students/r0666113/Documents/CPAED/sync1/src/../out/simv up to date
 make[1]: Leaving directory '/users/students/r0666113/Documents/CPAED/sync1/csrc' \
 
-CPU time: .215 seconds to compile + .208 seconds to elab + .116 seconds to link
+CPU time: .252 seconds to compile + .207 seconds to elab + .110 seconds to link
