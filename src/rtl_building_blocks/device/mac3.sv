@@ -23,8 +23,8 @@ module mac3 #(
   input logic signed [B_WIDTH-1:0] b2,
 
   //output
-  output logic signed [OUTPUT_WIDTH-1:0] out
-  output logic [31:0] ch_out
+  output logic signed [OUTPUT_WIDTH-1:0] out,
+  output logic [31:0] ch_out,
   output logic  out_written_to_mem_out
   
   );
