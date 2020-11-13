@@ -136,15 +136,15 @@ module top_chip #(
    .out_written_to_mem(ext_mem_write_en_to_mac),
    .accumulate_internal(mac_accumulate_internal),
    .partial_sum_in(mac_partial_sum),
-   .ch_out_in(ext_mem_write_addr_to_mac)
+   .ch_out_in(ext_mem_write_addr_to_mac),
    .a0(a0),
    .a1(a1),
    .a2(a2),
    .b0(b0),
    .b1(b1),
    .b2(b2),
-   .out(mac_out)
-   .ch_out(ext_mem_write_addr)
+   .out(mac_out),
+   .ch_out(ext_mem_write_addr),
    .out_written_to_mem_out(ext_mem_write_en));
 
   assign out = mac_out;
