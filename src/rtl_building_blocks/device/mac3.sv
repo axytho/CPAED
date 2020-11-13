@@ -161,7 +161,7 @@ module mac3 #(
    assign out_written_to_mem_pl_stage3_next = out_written_to_mem_pl_stage2;		 
    
    logic signed [ACCUMULATOR_WIDTH-1:0] adder_b;
-   assign adder_b = accumulate_internal_pl_stage3 ? accumulator_value_pl_stage4 : partial_sum_in_pl_stage3;
+
 	 
 
     adder #( .A_WIDTH(ACCUMULATOR_WIDTH),
@@ -182,7 +182,9 @@ module mac3 #(
    REG(1, out_written_to_mem_pl_stage4);
    assign out_written_to_mem_pl_stage4_we = input_valid;
    assign out_written_to_mem_pl_stage4_next = out_written_to_mem_pl_stage4;	
-
+   
+   assign adder_b = accumulate_internal_pl_stage3 ? accumulator_value_pl_stage4 : partial_sum_in_pl_stage3;
+   
   assign out = accumulator_value_pl_stage4 >>> OUTPUT_SCALE;
   assign ch_out = ch_out_pl_stage4;
   assign out_written_to_mem_out = out_written_to_mem_pl_stage4;
