@@ -174,8 +174,8 @@ module mac3 #(
      .out(sum));
 
    `REG(ACCUMULATOR_WIDTH, accumulator_value_pl_stage4);
-   assign accumulator_pl_stage4_we = input_valid;
-   assign accumulator_pl_stage4_next = sum;
+   assign accumulator_value_pl_stage4_we = input_valid;
+   assign accumulator_value_pl_stage4_next = sum;
    `REG(32, ch_out_pl_stage4);
    assign ch_out_pl_stage4_we = input_valid;
    assign ch_out_pl_stage4_next = ch_out_pl_stage3;
