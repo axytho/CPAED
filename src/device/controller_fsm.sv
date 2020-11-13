@@ -152,22 +152,18 @@ module controller_fsm #(
     case (current_state)
       IDLE: begin
         running = 0;
-        next_state = (start) ? FETCH_AB : IDLE;
+        next_state = start ? FETCH_AB : IDLE;
       end
       FETCH_AB: begin
         a_ready = 1;
-        write_a = 1;
+        write_a = a_valid;
         b_ready = 1;
-        write_b = 1;
-        next_state =  MAC;
+        write_b = b_valid;
+        next_state = (a_valid & b_valid) ? MAC : FETCH_AB;
       end
       MAC: begin
-        a_ready = 1;
-        write_a = 1;
-        b_ready = 1;
-        write_b = 1;
         mac_valid = 1;
-        next_state = last_overall ? IDLE : MAC;
+        next_state = last_overall ? IDLE : FETCH_AB;
       end
     endcase
   end

@@ -56,7 +56,6 @@ class Driver #(config_t cfg);
               for(int ky=0;ky<cfg.KERNEL_SIZE; ky++) begin
                 //for(int kx=0;kx<cfg.KERNEL_SIZE; kx++) begin
                   
-                  
                   //drive a (one word from feature)
                   intf_i.cb.a_valid <= 1;
                   if( x+0-cfg.KERNEL_SIZE/2 >= 0 && x+0-cfg.KERNEL_SIZE/2 < cfg.FEATURE_MAP_WIDTH
@@ -90,14 +89,11 @@ class Driver #(config_t cfg);
                   intf_i.cb.b_input1 <= tract_kernel.kernel[ky][1][inch][outch];
                   assert (!$isunknown(tract_kernel.kernel[ky][2][inch][outch]));
                   intf_i.cb.b_input2 <= tract_kernel.kernel[ky][2][inch][outch];
-                  
+                  @(posedge intf_i.clk);
                   //@(intf_i.cb iff (intf_i.cb.b_ready & intf_i.cb.a_ready));
-                  @(intf_i.cb);
-                  //@(intf_i.cb);
-
-                  //intf_i.cb.b_valid <= 0;
-                  //intf_i.cb.a_valid <= 0;
-                  
+                  @(intf_i.cb)
+                  intf_i.cb.b_valid <= 0;
+                  intf_i.cb.a_valid <= 0;
                 //end
               end
             end

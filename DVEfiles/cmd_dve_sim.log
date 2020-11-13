@@ -1,0 +1,102 @@
+set ucliGUI::state
+set ucliGUI::state
+ucliCore::getToolPID
+synopsys::env hasTB
+trigger_hier_stack_context_switch 0
+synopsys::xml set_array_limit <data limit="50" />
+synopsys::xml set_depth_limit <data limit="100" />
+synopsys::xml set_string_limit <data limit="1000" />
+synopsys::xml set_only_active_frame <data value="1" />
+synopsys::xml set_variable_frame_id <data value="1" />
+synUtils::setDVEInitPhase 1
+synopsys::dump -type VPD -file /tmp/inter.vpd -locking
+synopsys::dump -autoflush on -fid VPD0
+set ::dve_fid VPD0
+synUtils::setDVEInitPhase 0
+ucliCore::getToolPID
+synUtils::sendTool -active _icl_setToolSocket /tmp/smlnpvUxRXu
+synUtils::sendTool -active {_icl_start_rpc -version "M-2017.03_Full64" -sync_file /tmp/vcs_dve_rpc.r0669247.1798478}
+synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.r0669247.1798478}
+config endofsim noexit
+config onfail enable all
+config syscaddplainmembers
+config syscaddsourcenames
+config syscaddstructtypes
+synopsys::listing -disable
+synopsys::run
+set ucliGUI::state
+set ucliGUI::state
+set synopsys::env(time) 5651045000
+set synopsys::env(time) 11307565000
+set synopsys::env(time) 17106365000
+set synopsys::env(time) 22717087000
+set synopsys::env(time) 28515550000
+set synopsys::env(time) 34299505000
+set synopsys::env(time) 39887377000
+set synopsys::env(time) 45668265000
+set synopsys::env(time) 70388675000
+set synopsys::env(time) 101567435000
+set synopsys::env(time) 132744865000
+set synopsys::env(time) 163951435000
+set synopsys::env(time) 195140355000
+set synopsys::env(time) 226354220000
+set synopsys::env(time) 257546015000
+set synopsys::env(time) 288733595000
+set synopsys::env(time) 318852690000
+set synopsys::env(time) 350026165000
+set synopsys::env(time) 381251145000
+set synopsys::env(time) 412361890000
+set synopsys::env(time) 443536955000
+set synopsys::env(time) 474687745000
+set synopsys::env(time) 505887955000
+set synopsys::env(time) 537113345000
+set synopsys::env(time) 568311285000
+set synopsys::env(time) 599494945000
+set synopsys::env(time) 630655360000
+set synopsys::env(time) 661804650000
+set synopsys::env(time) 692979030000
+set synopsys::env(time) 724077885000
+ucliCore::getToolPID
+ucliCore::stopTool -no_signal
+set ucliGUI::state
+set ucliGUI::state
+synopsys::xml get_stop_data
+synopsys::xml {frames <data updateType="preserve" itemId="none" viewId="Stack.1" />}
+synopsys::xml {locals <data updateType="preserve" itemId="none" frame_id="frame(16:0:2)" viewId="Local.1" />}
+synopsys::dump -add {tbench_top.intf_i } -aggregates  -fid VPD0
+synopsys::next
+set ucliGUI::state
+set ucliGUI::state
+synopsys::xml get_stop_data
+synopsys::xml {frames <data updateType="preserve" itemId="none" viewId="Stack.1" > <item frame_id="frame(tbench_top.t1)" /></data>}
+synopsys::xml {locals <data updateType="preserve" itemId="none" frame_id="frame(16:0:2)" viewId="Local.1" />}
+synopsys::run
+set ucliGUI::state
+set ucliGUI::state
+set synopsys::env(time) 761234375000
+set synopsys::env(time) 773577585000
+set synopsys::env(time) 785815640000
+ucliCore::getToolPID
+ucliCore::stopTool -no_signal
+set ucliGUI::state
+set ucliGUI::state
+synopsys::xml get_stop_data
+synopsys::xml {frames <data updateType="preserve" itemId="none" viewId="Stack.1" > <item frame_id="frame(tbench_top.t1)" /></data>}
+synopsys::xml {locals <data updateType="preserve" itemId="none" frame_id="frame(16:0:2)" viewId="Local.1" />}
+synopsys::run
+set ucliGUI::state
+set ucliGUI::state
+set synopsys::env(time) 804201095000
+set synopsys::env(time) 816480355000
+ucliCore::getToolPID
+ucliCore::stopTool -no_signal
+set ucliGUI::state
+set ucliGUI::state
+synopsys::xml get_stop_data
+synopsys::xml {frames <data updateType="preserve" itemId="none" viewId="Stack.1" > <item frame_id="frame(tbench_top.t1)" /></data>}
+synopsys::xml {locals <data updateType="preserve" itemId="none" frame_id="frame(16:0:2)" viewId="Local.1" />}
+if [catch {gui_sim_terminate}] {gui_sim_terminate -kill}
+synopsys::finish
+set ucliGUI::state
+set ucliGUI::state
+ucli_exit
