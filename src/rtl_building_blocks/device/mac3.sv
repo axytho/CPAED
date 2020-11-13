@@ -181,7 +181,7 @@ module mac3 #(
    assign ch_out_pl_stage4_next = ch_out_pl_stage3;
    `REG(1, out_written_to_mem_pl_stage4);
    assign out_written_to_mem_pl_stage4_we = input_valid;
-   assign out_written_to_mem_pl_stage4_next = out_written_to_mem_pl_stage4;	
+   assign out_written_to_mem_pl_stage4_next = out_written_to_mem_pl_stage3;	
    
    assign adder_b = accumulate_internal_pl_stage3 ? accumulator_value_pl_stage4 : partial_sum_in_pl_stage3;
    
