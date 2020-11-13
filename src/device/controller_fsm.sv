@@ -93,12 +93,9 @@ module controller_fsm #(
   assign last_overall   = last_k_h && last_k_v && last_ch_out && last_ch_in && last_y && last_x;
 
 
-  `REG(32, prev_ch_out);
-  assign prev_ch_out_next = ch_out;
-  assign prev_ch_out_we = ch_out_we;
   //given loop order, partial sums need be saved over input channels
-  assign mem_we         = k_v == 0 && k_h == 0; // Note: one cycle after last_k_v and last_k_h, because of register in mac unit
-  assign mem_write_addr = prev_ch_out;
+  assign mem_we         = k_v == 2 && k_h == 0; // Note: one cycle after last_k_v and last_k_h, because of register in mac unit
+  assign mem_write_addr = ch_out;
 
   //and loaded back
   assign mem_re         = k_v == 0 && k_h == 0;
