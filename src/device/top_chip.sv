@@ -145,7 +145,7 @@ module top_chip #(
    .b2(b2),
    .out(mac_out)
    .ch_out(ext_mem_write_addr)
-   .out_written_to_mem_out());
+   .out_written_to_mem_out(ext_mem_write_en));
 
   assign out = mac_out;
   assign ext_mem_din = mac_out;
