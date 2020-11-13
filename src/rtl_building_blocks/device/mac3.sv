@@ -139,7 +139,7 @@ module mac3 #(
            .OUT_WIDTH(ACCUMULATOR_WIDTH),
            .OUT_SCALE(0))
     add1
-    (.a(product2),
+    (.a(product2_pl_stage2),
      .b(tempSum0_pl_stage2),
      .out(tempSum1));
 	 
