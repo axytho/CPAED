@@ -233,19 +233,19 @@ module controller_fsm #(
         write_b = 1;
         mac_valid = 1;
         next_state = last_overall ? MAC1 : MAC;
-     end 
-	 MAC1: begin
+      end 
+	  MAC1: begin
 	      mac_valid = 1;
-		  next_state = MAC2
-     end
-	 MAC2: begin
+		  next_state = MAC2;
+      end
+	  MAC2: begin
 	      mac_valid = 1;
-		  next_state = MAC3
-     end
-	 MAC3: begin
+		  next_state = MAC3;
+      end
+	  MAC3: begin
 	      mac_valid = 1;
-		  next_state = IDLE
-     end
+		  next_state = IDLE;
+      end
     endcase
   end
 endmodule
