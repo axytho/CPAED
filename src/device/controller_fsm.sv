@@ -192,7 +192,7 @@ module controller_fsm #(
   assign output_ch = output_ch_pl_stage4;
   //mini fsm to loop over <fetch_a, fetch_b, acc>
 
-  typedef enum {IDLE, FETCH_AB, MAC} fsm_state;
+  typedef enum {IDLE, FETCH_AB, MAC, MAC1, MAC2, MAC3} fsm_state;
   fsm_state current_state;
   fsm_state next_state;
   always @ (posedge clk or negedge arst_n_in) begin
@@ -232,8 +232,20 @@ module controller_fsm #(
         b_ready = 1;
         write_b = 1;
         mac_valid = 1;
-        next_state = last_overall ? IDLE : MAC;
-      end
+        next_state = last_overall ? MAC1 : MAC;
+     end 
+	 MAC1 begin:
+	      mac_valid = 1;
+		  next_state = MAC2
+     end
+	 MAC2 begin:
+	      mac_valid = 1;
+		  next_state = MAC3
+     end
+	 MAC3 begin:
+	      mac_valid = 1;
+		  next_state = IDLE
+     end
     endcase
   end
 endmodule
