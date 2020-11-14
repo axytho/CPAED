@@ -234,15 +234,15 @@ module controller_fsm #(
         mac_valid = 1;
         next_state = last_overall ? MAC1 : MAC;
      end 
-	 MAC1 begin:
+	 MAC1: begin
 	      mac_valid = 1;
 		  next_state = MAC2
      end
-	 MAC2 begin:
+	 MAC2: begin
 	      mac_valid = 1;
 		  next_state = MAC3
      end
-	 MAC3 begin:
+	 MAC3: begin
 	      mac_valid = 1;
 		  next_state = IDLE
      end
