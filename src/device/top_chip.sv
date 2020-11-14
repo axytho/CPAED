@@ -50,9 +50,6 @@ module top_chip #(
   logic write_a;
   logic write_b;
   
-  logic ext_mem_write_en_to_mac;
-  logic [31:0] ext_mem_write_addr_to_mac;
-
   `REG(IO_DATA_WIDTH, a0);
   `REG(IO_DATA_WIDTH, a1);
   `REG(IO_DATA_WIDTH, a2);
@@ -91,8 +88,8 @@ module top_chip #(
   .start(start),
   .running(running),
 
-  .mem_we(ext_mem_write_en_to_mac),
-  .mem_write_addr(ext_mem_write_addr_to_mac),
+  .mem_we(ext_mem_write_en),
+  .mem_write_addr(ext_mem_write_addr),
   .mem_re(ext_mem_read_en),
   .mem_read_addr(ext_mem_read_addr),
 
@@ -136,16 +133,13 @@ module top_chip #(
    .out_written_to_mem(ext_mem_write_en_to_mac),
    .accumulate_internal(mac_accumulate_internal),
    .partial_sum_in(mac_partial_sum),
-   .ch_out_in(ext_mem_write_addr_to_mac),
    .a0(a0),
    .a1(a1),
    .a2(a2),
    .b0(b0),
    .b1(b1),
    .b2(b2),
-   .out(mac_out),
-   .ch_out(ext_mem_write_addr),
-   .out_written_to_mem_out(ext_mem_write_en));
+   .out(mac_out));
 
   assign out = mac_out;
   assign ext_mem_din = mac_out;

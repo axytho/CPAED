@@ -13,8 +13,7 @@ module mac3 #(
   input logic input_valid,
   input logic out_written_to_mem,
   input logic accumulate_internal, //accumulate (accumulator <= a*b + accumulator) if high (1) or restart accumulation (accumulator <= a*b+0) if low (0)
-  input logic [ACCUMULATOR_WIDTH-1:0] partial_sum_in,
-  input logic [31:0] ch_out_in,    
+  input logic [ACCUMULATOR_WIDTH-1:0] partial_sum_in,   
   input logic signed [A_WIDTH-1:0] a0,
   input logic signed [B_WIDTH-1:0] b0,
   input logic signed [A_WIDTH-1:0] a1,
@@ -24,9 +23,6 @@ module mac3 #(
 
   //output
   output logic signed [OUTPUT_WIDTH-1:0] out,
-  output logic [31:0] ch_out,
-  output logic  out_written_to_mem_out
-  
   );
   /*
 
@@ -86,15 +82,9 @@ module mac3 #(
    `REG(ACCUMULATOR_WIDTH, partial_sum_in_pl_stage1);
    assign partial_sum_in_pl_stage1_we = input_valid;
    assign partial_sum_in_pl_stage1_next = partial_sum_in;
-   `REG(32, ch_out_pl_stage1);
-   assign ch_out_pl_stage1_we = input_valid;
-   assign ch_out_pl_stage1_next = ch_out_in;
    `REG(1, accumulate_internal_pl_stage1);
    assign accumulate_internal_pl_stage1_we = input_valid;
    assign accumulate_internal_pl_stage1_next = accumulate_internal;
-   `REG(1, out_written_to_mem_pl_stage1);
-   assign out_written_to_mem_pl_stage1_we = input_valid;
-   assign out_written_to_mem_pl_stage1_next = out_written_to_mem;
    
 
    
@@ -124,15 +114,9 @@ module mac3 #(
    `REG(ACCUMULATOR_WIDTH, partial_sum_in_pl_stage2);
    assign partial_sum_in_pl_stage2_we = input_valid;
    assign partial_sum_in_pl_stage2_next = partial_sum_in_pl_stage1;
-   `REG(32, ch_out_pl_stage2);
-   assign ch_out_pl_stage2_we = input_valid;
-   assign ch_out_pl_stage2_next = ch_out_pl_stage1;
    `REG(1, accumulate_internal_pl_stage2);
    assign accumulate_internal_pl_stage2_we = input_valid;
    assign accumulate_internal_pl_stage2_next = accumulate_internal_pl_stage1;
-   `REG(1, out_written_to_mem_pl_stage2);
-   assign out_written_to_mem_pl_stage2_we = input_valid;
-   assign out_written_to_mem_pl_stage2_next = out_written_to_mem_pl_stage1;	
 
       adder #( .A_WIDTH(ACCUMULATOR_WIDTH),
            .B_WIDTH(ACCUMULATOR_WIDTH),
@@ -150,15 +134,9 @@ module mac3 #(
    `REG(ACCUMULATOR_WIDTH, partial_sum_in_pl_stage3);
    assign partial_sum_in_pl_stage3_we = input_valid;
    assign partial_sum_in_pl_stage3_next = partial_sum_in_pl_stage2;
-   `REG(32, ch_out_pl_stage3);
-   assign ch_out_pl_stage3_we = input_valid;
-   assign ch_out_pl_stage3_next = ch_out_pl_stage2;
    `REG(1, accumulate_internal_pl_stage3);
    assign accumulate_internal_pl_stage3_we = input_valid;
-   assign accumulate_internal_pl_stage3_next = accumulate_internal_pl_stage2;
-   `REG(1, out_written_to_mem_pl_stage3);
-   assign out_written_to_mem_pl_stage3_we = input_valid;
-   assign out_written_to_mem_pl_stage3_next = out_written_to_mem_pl_stage2;		 
+   assign accumulate_internal_pl_stage3_next = accumulate_internal_pl_stage2;	 
    
    logic signed [ACCUMULATOR_WIDTH-1:0] adder_b;
 
@@ -176,17 +154,9 @@ module mac3 #(
    `REG(ACCUMULATOR_WIDTH, accumulator_value_pl_stage4);
    assign accumulator_value_pl_stage4_we = input_valid;
    assign accumulator_value_pl_stage4_next = sum;
-   `REG(32, ch_out_pl_stage4);
-   assign ch_out_pl_stage4_we = input_valid;
-   assign ch_out_pl_stage4_next = ch_out_pl_stage3;
-   `REG(1, out_written_to_mem_pl_stage4);
-   assign out_written_to_mem_pl_stage4_we = input_valid;
-   assign out_written_to_mem_pl_stage4_next = out_written_to_mem_pl_stage3;	
    
    assign adder_b = accumulate_internal_pl_stage3 ? accumulator_value_pl_stage4 : partial_sum_in_pl_stage3;
    
   assign out = accumulator_value_pl_stage4 >>> OUTPUT_SCALE;
-  assign ch_out = ch_out_pl_stage4;
-  assign out_written_to_mem_out = out_written_to_mem_pl_stage4;
 
 endmodule

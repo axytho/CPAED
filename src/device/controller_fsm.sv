@@ -94,8 +94,36 @@ module controller_fsm #(
 
 
   //given loop order, partial sums need be saved over input channels
-  assign mem_we         = k_v == 2 && k_h == 0; // Note: one cycle after last_k_v and last_k_h, because of register in mac unit
-  assign mem_write_addr = ch_out;
+  
+  `REG(1, mem_we_pl_stage1);
+   assign mem_we_pl_stage1_next = k_v == 2 && k_h == 0; 
+   assign mem_we_pl_stage1_we = 1; 
+  `REG(1, mem_we_pl_stage2);
+   assign mem_we_pl_stage2_next = mem_we_pl_stage1; 
+   assign mem_we_pl_stage2_we = 1; 
+  `REG(1, mem_we_pl_stage3);
+   assign mem_we_pl_stage3_next = mem_we_pl_stage2; 
+   assign mem_we_pl_stage3_we = 1; 
+  `REG(1, mem_we_pl_stage4);
+   assign mem_we_pl_stage4_next = mem_we_pl_stage3; 
+   assign mem_we_pl_stage4_we = 1; 
+   assign mem_we = mem_we_pl_stage4;
+   
+   
+   
+  `REG(32, mem_write_addr_pl_stage1);
+   assign mem_write_addr_pl_stage1_next = ch_out; 
+   assign mem_write_addr_pl_stage1_we = 1; 
+  `REG(32, mem_write_addr_pl_stage2);
+   assign mem_write_addr_pl_stage2_next = mem_write_addr_pl_stage1; 
+   assign mem_write_addr_pl_stage2_we = 1; 
+  `REG(32, mem_write_addr_pl_stage3);
+   assign mem_write_addr_pl_stage3_next = mem_write_addr_pl_stage2; 
+   assign mem_write_addr_pl_stage3_we = 1; 
+  `REG(32, mem_write_addr_pl_stage4);
+   assign mem_write_addr_pl_stage4_next = mem_write_addr_pl_stage3; 
+   assign mem_write_addr_pl_stage4_we = 1;    
+   assign mem_write_addr = mem_write_addr_pl_stage4;
 
   //and loaded back
   assign mem_re         = k_v == 0 && k_h == 0;
@@ -105,23 +133,63 @@ module controller_fsm #(
   assign mac_accumulate_with_0   = ch_in ==0 && k_v == 0 && k_h == 0;
 
   //mark outputs
-  `REG(1, output_valid_reg);
-  assign output_valid_reg_next = mac_valid && last_ch_in && last_k_v && last_k_h;
-  assign output_valid_reg_we   = 1;
-  assign output_valid = output_valid_reg;
+  `REG(1, output_valid_pl_stage1);
+  assign output_valid_pl_stage1_next = mac_valid && last_ch_in && last_k_v && last_k_h;
+  assign output_valid_pl_stage1_we   = 1;
+  `REG(1, output_valid_pl_stage2);
+  assign output_valid_pl_stage2_next = output_valid_pl_stage1;
+  assign output_valid_pl_stage2_we   = 1;  
+  `REG(1, output_valid_pl_stage3);
+  assign output_valid_pl_stage3_next = output_valid_pl_stage2;
+  assign output_valid_pl_stage3_we   = 1;   
+  `REG(1, output_valid_pl_stage4);
+  assign output_valid_pl_stage4_next = output_valid_pl_stage3;
+  assign output_valid_pl_stage4_we   = 1;     
+  assign output_valid = output_valid_pl_stage4;
 
-  register #(.WIDTH(32)) output_x_r (.clk(clk), .arst_n_in(arst_n_in),
-                                                .din(x),
-                                                .qout(output_x),
-                                                .we(mac_valid && last_ch_in && last_k_v && last_k_h));
-  register #(.WIDTH(32)) output_y_r (.clk(clk), .arst_n_in(arst_n_in),
-                                                .din(y),
-                                                .qout(output_y),
-                                                .we(mac_valid && last_ch_in && last_k_v && last_k_h));
-  register #(.WIDTH(32)) output_ch_r (.clk(clk), .arst_n_in(arst_n_in),
-                                                .din(ch_out),
-                                                .qout(output_ch),
-                                                .we(mac_valid && last_ch_in && last_k_v && last_k_h));
+
+  `REG(32, output_x_pl_stage1);
+  assign output_x_pl_stage1_next = x;
+  assign output_x_pl_stage1_we   = mac_valid && last_ch_in && last_k_v && last_k_h;
+  `REG(32, output_x_pl_stage2);
+  assign output_x_pl_stage2_next = output_x_pl_stage1;
+  assign output_x_pl_stage2_we   = output_valid_pl_stage1;
+  `REG(32, output_x_pl_stage3);
+  assign output_x_pl_stage3_next = output_x_pl_stage2;
+  assign output_x_pl_stage3_we   = output_valid_pl_stage2;
+  `REG(32, output_x_pl_stage4);
+  assign output_x_pl_stage4_next = output_x_pl_stage3;
+  assign output_x_pl_stage4_we   = output_valid_pl_stage3;
+  assign output_x = output_x_pl_stage4;
+
+  `REG(32, output_y_pl_stage1);
+  assign output_y_pl_stage1_next = y;
+  assign output_y_pl_stage1_we   = mac_valid && last_ch_in && last_k_v && last_k_h;
+  `REG(32, output_y_pl_stage2);
+  assign output_y_pl_stage2_next = output_y_pl_stage1;
+  assign output_y_pl_stage2_we   = output_valid_pl_stage1;
+  `REG(32, output_y_pl_stage3);
+  assign output_y_pl_stage3_next = output_y_pl_stage2;
+  assign output_y_pl_stage3_we   = output_valid_pl_stage2;
+  `REG(32, output_y_pl_stage4);
+  assign output_y_pl_stage4_next = output_y_pl_stage3;
+  assign output_y_pl_stage4_we   = output_valid_pl_stage3;
+  assign output_y = output_y_pl_stage4;
+
+
+  `REG(32, output_ch_pl_stage1);
+  assign output_ch_pl_stage1_next = ch_out;
+  assign output_ch_pl_stage1_we   = mac_valid && last_ch_in && last_k_v && last_k_h;
+  `REG(32, output_ch_pl_stage2);
+  assign output_ch_pl_stage2_next = output_ch_pl_stage1;
+  assign output_ch_pl_stage2_we   = output_valid_pl_stage1;
+  `REG(32, output_ch_pl_stage3);
+  assign output_ch_pl_stage3_next = output_ch_pl_stage2;
+  assign output_ch_pl_stage3_we   = output_valid_pl_stage2;
+  `REG(32, output_ch_pl_stage4);
+  assign output_ch_pl_stage4_next = output_ch_pl_stage3;
+  assign output_ch_pl_stage4_we   = output_valid_pl_stage3;
+  assign output_ch = output_ch_pl_stage4;
   //mini fsm to loop over <fetch_a, fetch_b, acc>
 
   typedef enum {IDLE, FETCH_AB, MAC} fsm_state;
