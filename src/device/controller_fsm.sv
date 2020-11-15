@@ -250,7 +250,6 @@ module controller_fsm #(
   end
   
   covergroup cg2@(posedge clk);
-
       c1: coverpoint current_state
 	  {
 		bins a = {IDLE     => FETCH_AB);
