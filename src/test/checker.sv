@@ -75,7 +75,7 @@ class Checker #(config_t cfg);
       bit output_tested [0:cfg.FEATURE_MAP_WIDTH-1][0:cfg.FEATURE_MAP_HEIGHT-1][0:cfg.OUTPUT_NB_CHANNELS-1];
 	  gen2chk_kernel.get(tract_kernel);
       // initialize
-	  $display("start of another test");
+	  $display("[[CHK] start of another test");
       for(int x=0;x<cfg.FEATURE_MAP_WIDTH; x++) begin
         for(int y=0;y<cfg.FEATURE_MAP_HEIGHT; y++) begin
           for(int outch=0;outch<cfg.OUTPUT_NB_CHANNELS; outch++) begin
@@ -88,6 +88,7 @@ class Checker #(config_t cfg);
       gen2chk_feature.get(tract_feature);
       forever // run until all the words for the current output are checked
       begin
+	    $display("[CHK] start checking");
         logic signed [cfg.DATA_WIDTH] expected;
         bit output_correct;
         Transaction_Output_Word #(cfg) tract_output;
