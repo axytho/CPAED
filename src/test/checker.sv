@@ -65,14 +65,15 @@ class Checker #(config_t cfg);
     begin
       Transaction_Feature #(cfg) tract_feature;
 	  Transaction_Kernel #(cfg) tract_kernel;
-      gen2chk_kernel.get(tract_kernel);
       // keep track of how many words are tested so far
       int count= 0;
+	  
 
       bit no_error_in_full_output_frame= 1;
 
       // output_tested makes sure that the same output word is not tested again
       bit output_tested [0:cfg.FEATURE_MAP_WIDTH-1][0:cfg.FEATURE_MAP_HEIGHT-1][0:cfg.OUTPUT_NB_CHANNELS-1];
+	  gen2chk_kernel.get(tract_kernel);
       // initialize
       for(int x=0;x<cfg.FEATURE_MAP_WIDTH; x++) begin
         for(int y=0;y<cfg.FEATURE_MAP_HEIGHT; y++) begin
