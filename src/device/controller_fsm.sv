@@ -259,7 +259,7 @@ module controller_fsm #(
 		bins e = (MAC2 => MAC3);
 		bins f = (MAC3 => IDLE);
 		bins h = (MAC => IDLE); //should not happen
-		bins h = (MAC => FETCH_AB);
+		bins i = (MAC => FETCH_AB);
 	  }
   endgroup
   cg2 cg_inst = new;  
