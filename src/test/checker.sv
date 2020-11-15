@@ -102,7 +102,7 @@ class Checker #(config_t cfg);
         assert (!$isunknown(tract_output.output_ch)) else $stop;
         assert (!$isunknown(expected)) else $stop;
 
-        assert (!output_tested[tract_output.output_x][tract_output.output_y][tract_output.output_ch]) else
+        //assert (!output_tested[tract_output.output_x][tract_output.output_y][tract_output.output_ch]) else
         begin
           $error("\
             An output word is being received twice, or dimensions output_x, etc are corrupted.\n\
