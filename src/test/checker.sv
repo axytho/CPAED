@@ -90,7 +90,6 @@ class Checker #(config_t cfg);
         logic signed [cfg.DATA_WIDTH] expected;
         bit output_correct;
         Transaction_Output_Word #(cfg) tract_output;
-		$display("[CHK] new loop iteration");
         mon2chk.get(tract_output);
 
         expected = this.golden_output(tract_feature.inputs, tract_kernel.kernel,
@@ -124,7 +123,6 @@ class Checker #(config_t cfg);
         end
         count++;
         if (count == COUNT_ALL_OUTPUT) begin
-		  $display("[CHK] fineshed check of the test"); 
 		  for(int x=0;x<cfg.FEATURE_MAP_WIDTH; x++) begin
                  for(int y=0;y<cfg.FEATURE_MAP_HEIGHT; y++) begin
                      for(int outch=0;outch<cfg.OUTPUT_NB_CHANNELS; outch++) begin
