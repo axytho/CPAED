@@ -88,12 +88,12 @@ class Checker #(config_t cfg);
       gen2chk_feature.get(tract_feature);
       forever // run until all the words for the current output are checked
       begin
-	    $display("[CHK] start checking");
         logic signed [cfg.DATA_WIDTH] expected;
         bit output_correct;
         Transaction_Output_Word #(cfg) tract_output;
         mon2chk.get(tract_output);
 
+        $display("[CHK] start checking");
         expected = this.golden_output(tract_feature.inputs, tract_kernel.kernel,
                       tract_output.output_x, tract_output.output_y, tract_output.output_ch);
 
