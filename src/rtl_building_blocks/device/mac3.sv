@@ -157,6 +157,11 @@ module mac3 #(
    
    assign adder_b = accumulate_internal_pl_stage3 ? accumulator_value_pl_stage4 : partial_sum_in_pl_stage3;
    
-  assign out = accumulator_value_pl_stage4 >>> OUTPUT_SCALE;
+   assign out = accumulator_value_pl_stage4 >>> OUTPUT_SCALE;
+   
+   covergroup cg1@(posedge clk);
+       c1: coverpoint out; 
+   endgroup 
+
 
 endmodule
