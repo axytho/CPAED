@@ -18,18 +18,18 @@ class Generator #(config_t cfg);
 
   task run();
     // instantiate and randomize kernel once
-    Transaction_Kernel #(cfg) tract_kernel;
-    tract_kernel = new();
-    tract_kernel.randomize();
-    gen2drv_kernel.put(tract_kernel);
-    gen2chk_kernel.put(tract_kernel);
-
     forever
     begin
       // instantiate and randomize features until simulation ends
       Transaction_Feature #(cfg) tract_feature;
+	  Transaction_Kernel #(cfg) tract_kernel;
       tract_feature = new();
       tract_feature.randomize();
+	  
+      tract_kernel = new();
+      tract_kernel.randomize();
+      gen2drv_kernel.put(tract_kernel);
+      gen2chk_kernel.put(tract_kernel);
 
       gen2drv_feature.put(tract_feature);
       gen2chk_feature.put(tract_feature);
