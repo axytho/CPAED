@@ -249,7 +249,8 @@ module controller_fsm #(
     endcase
   end
   
-  covergroup cg2:
+  covergroup cg2@(posedge clk);
+
       c1: coverpoint current_state
 	  {
 		bins a = {IDLE     => FETCH_AB);
