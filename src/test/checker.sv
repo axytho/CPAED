@@ -85,7 +85,7 @@ class Checker #(config_t cfg);
 
       // get input feature from the Generator
       gen2chk_feature.get(tract_feature);
-      for(int x=0;x<cfg.FEATURE_MAP_WIDTH*cfg.FEATURE_MAP_HEIGHT; x++) // run until all the words for the current output are checked
+      forever // run until all the words for the current output are checked
       begin
         logic signed [cfg.DATA_WIDTH] expected;
         bit output_correct;
