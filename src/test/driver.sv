@@ -32,21 +32,21 @@ class Driver #(config_t cfg);
   task run();
     // Get a transaction with kernel from the Generator
     // Kernel remains same throughput the verification
-    Transaction_Kernel #(cfg) tract_kernel;
-    gen2drv_kernel.get(tract_kernel);
-
-    $display("[DRV] -----  Start execution -----");
-    intf_i.cb.start <= 1;
-    @(intf_i.cb);
-    intf_i.cb.start <= 0;
 
     forever begin
+      Transaction_Feature #(cfg) tract_feature;
+	  Transaction_Kernel #(cfg) tract_kernel;
+      gen2drv_feature.get(tract_feature);
+      gen2drv_kernel.get(tract_kernel);
+
+	  repeat (4) @(intf_i.cb);
+	  Reset
+      $display("[DRV] -----  Start execution -----");
+      intf_i.cb.start <= 1;
+      @(intf_i.cb);
+      intf_i.cb.start <= 0;
 
       // Get a transaction with feature from the Generator
-      Transaction_Feature #(cfg) tract_feature;
-      gen2drv_feature.get(tract_feature);
-
-
       $display("[DRV] ----- Driving a new input feature map -----");
       for(int x=0;x<cfg.FEATURE_MAP_WIDTH; x++) begin
         $display("[DRV] %.2f %% of the computation done", ((x)*100.0)/cfg.FEATURE_MAP_WIDTH);
