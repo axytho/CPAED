@@ -38,9 +38,8 @@ class Driver #(config_t cfg);
 	  Transaction_Kernel #(cfg) tract_kernel;
       gen2drv_feature.get(tract_feature);
       gen2drv_kernel.get(tract_kernel);
-
 	  repeat (4) @(intf_i.cb);
-	  Reset
+	  Reset;
       $display("[DRV] -----  Start execution -----");
       intf_i.cb.start <= 1;
       @(intf_i.cb);
