@@ -60,13 +60,12 @@ class Checker #(config_t cfg);
 
   task run;
     //  Get kernel from the Generator, only once
-    Transaction_Kernel #(cfg) tract_kernel;
-    gen2chk_kernel.get(tract_kernel);
 
     forever 
     begin
       Transaction_Feature #(cfg) tract_feature;
-
+	  Transaction_Kernel #(cfg) tract_kernel;
+      gen2chk_kernel.get(tract_kernel);
       // keep track of how many words are tested so far
       int count= 0;
 
@@ -85,7 +84,7 @@ class Checker #(config_t cfg);
 
       // get input feature from the Generator
       gen2chk_feature.get(tract_feature);
-      forever // run until all the words for the current output are checked
+      for(int x=0;x<cfg.FEATURE_MAP_WIDTH*cfg.FEATURE_MAP_HEIGHT; x++) // run until all the words for the current output are checked
       begin
         logic signed [cfg.DATA_WIDTH] expected;
         bit output_correct;
