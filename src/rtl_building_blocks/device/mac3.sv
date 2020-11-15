@@ -160,7 +160,8 @@ module mac3 #(
    assign out = accumulator_value_pl_stage4 >>> OUTPUT_SCALE;
    
    covergroup cg1@(posedge clk);
-       c1: coverpoint out; 
+       c1: coverpoint out;
+       c2: cross a1,b1; 	   
    endgroup 
    
    cg1 cg_inst = new;
