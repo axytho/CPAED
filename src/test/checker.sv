@@ -75,7 +75,6 @@ class Checker #(config_t cfg);
       bit output_tested [0:cfg.FEATURE_MAP_WIDTH-1][0:cfg.FEATURE_MAP_HEIGHT-1][0:cfg.OUTPUT_NB_CHANNELS-1];
 	  gen2chk_kernel.get(tract_kernel);
       // initialize
-	  $display("[[CHK] start of another test");
       for(int x=0;x<cfg.FEATURE_MAP_WIDTH; x++) begin
         for(int y=0;y<cfg.FEATURE_MAP_HEIGHT; y++) begin
           for(int outch=0;outch<cfg.OUTPUT_NB_CHANNELS; outch++) begin
@@ -93,7 +92,6 @@ class Checker #(config_t cfg);
         Transaction_Output_Word #(cfg) tract_output;
         mon2chk.get(tract_output);
 
-        $display("[CHK] start checking");
         expected = this.golden_output(tract_feature.inputs, tract_kernel.kernel,
                       tract_output.output_x, tract_output.output_y, tract_output.output_ch);
 
@@ -124,6 +122,14 @@ class Checker #(config_t cfg);
         end
         count++;
         if (count == COUNT_ALL_OUTPUT) begin
+		     for(int x=0;x<cfg.FEATURE_MAP_WIDTH; x++) begin
+                 for(int y=0;y<cfg.FEATURE_MAP_HEIGHT; y++) begin
+                     for(int outch=0;outch<cfg.OUTPUT_NB_CHANNELS; outch++) begin
+                         output_tested[x][y][outch] = 0;
+                     end
+                  end
+             end
+		  count = 0;
           break;
         end
       end
