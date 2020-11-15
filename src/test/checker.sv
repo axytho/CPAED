@@ -75,7 +75,7 @@ class Checker #(config_t cfg);
       bit output_tested [0:cfg.FEATURE_MAP_WIDTH-1][0:cfg.FEATURE_MAP_HEIGHT-1][0:cfg.OUTPUT_NB_CHANNELS-1];
 	  gen2chk_kernel.get(tract_kernel);
       // initialize
-	  $display("start of another test")
+	  $display("start of another test");
       for(int x=0;x<cfg.FEATURE_MAP_WIDTH; x++) begin
         for(int y=0;y<cfg.FEATURE_MAP_HEIGHT; y++) begin
           for(int outch=0;outch<cfg.OUTPUT_NB_CHANNELS; outch++) begin
