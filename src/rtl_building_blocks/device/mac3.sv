@@ -162,6 +162,8 @@ module mac3 #(
    covergroup cg1@(posedge clk);
        c1: coverpoint out; 
    endgroup 
+   
+   cg1 cg_inst = new;
 
 
 endmodule
