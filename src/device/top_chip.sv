@@ -143,5 +143,11 @@ module top_chip #(
 
   assign out = mac_out;
   assign ext_mem_din = mac_out;
+  
+  
+  
+   covergroup cg1@(posedge clk);
+       c: cross ext_mem_din, ext_mem_write_en; 	   
+   endgroup 
 
 endmodule
