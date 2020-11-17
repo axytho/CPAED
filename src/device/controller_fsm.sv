@@ -235,19 +235,19 @@ module controller_fsm #(
 			      write_bs    = 1;
 				  next_state  = (valid) ? MAC1:MACW2; 
 			  end
-			  begin: LO1
+			  LO1: begin
 				  next_state  = LO2; 
 			  end
-			  begin: LO2
+			  LO2: begin
 				  next_state  = LO3; 
 			  end	
-			  begin: LO3
+			  LO3: begin
 				  next_state  = LO4; 
 			  end
-			  begin:LO4
+			  LO4: begin
 				  next_state  = DONE; 
 			  end
-			  begin: DONE
+			  DONE: begin
 				  next_state  = IDLE; 
 			  end				  
 		  endcase
