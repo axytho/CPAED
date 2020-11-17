@@ -126,12 +126,12 @@ module controller_fsm #(
   assign mem_re         = k_v == 0;
   assign mem_read_addr  = ch_out;
 
-  assign mac_accumulate_internal = ! (k_v == 0 && k_h == 0);
-  assign mac_accumulate_with_0   = ch_in ==0 && k_v == 0 && k_h == 0;
+  assign mac_accumulate_internal = ! (k_v == 0);
+  assign mac_accumulate_with_0   = ch_in ==0 && k_v == 0;
 
   //mark outputs
   `REG(1, output_valid_pl_stage1);
-  assign output_valid_pl_stage1_next = mac_valid && last_ch_in && last_k_v && last_k_h;
+  assign output_valid_pl_stage1_next = mac_valid && last_ch_in && last_k_v;
   assign output_valid_pl_stage1_we   = 1;
   `REG(1, output_valid_pl_stage2);
   assign output_valid_pl_stage2_next = output_valid_pl_stage1;
@@ -147,7 +147,7 @@ module controller_fsm #(
 
   `REG(32, output_x_pl_stage1);
   assign output_x_pl_stage1_next = x;
-  assign output_x_pl_stage1_we   = mac_valid && last_ch_in && last_k_v && last_k_h;
+  assign output_x_pl_stage1_we   = mac_valid && last_ch_in && last_k_v;
   `REG(32, output_x_pl_stage2);
   assign output_x_pl_stage2_next = output_x_pl_stage1;
   assign output_x_pl_stage2_we   = output_valid_pl_stage1;
@@ -161,7 +161,7 @@ module controller_fsm #(
 
   `REG(32, output_y_pl_stage1);
   assign output_y_pl_stage1_next = y;
-  assign output_y_pl_stage1_we   = mac_valid && last_ch_in && last_k_v && last_k_h;
+  assign output_y_pl_stage1_we   = mac_valid && last_ch_in && last_k_v;
   `REG(32, output_y_pl_stage2);
   assign output_y_pl_stage2_next = output_y_pl_stage1;
   assign output_y_pl_stage2_we   = output_valid_pl_stage1;
@@ -176,7 +176,7 @@ module controller_fsm #(
 
   `REG(32, output_ch_pl_stage1);
   assign output_ch_pl_stage1_next = ch_out;
-  assign output_ch_pl_stage1_we   = mac_valid && last_ch_in && last_k_v && last_k_h;
+  assign output_ch_pl_stage1_we   = mac_valid && last_ch_in && last_k_v;
   `REG(32, output_ch_pl_stage2);
   assign output_ch_pl_stage2_next = output_ch_pl_stage1;
   assign output_ch_pl_stage2_we   = output_valid_pl_stage1;
