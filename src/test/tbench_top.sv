@@ -50,10 +50,10 @@ module tbench_top;
    .input0     (intf_i.input0),
    .input1     (intf_i.input1),
    .input2     (intf_i.input2),
-   .input1     (intf_i.input3),
-   .input2     (intf_i.input4),
+   .input3     (intf_i.input3),
+   .input4     (intf_i.input4),
    .valid     (intf_i.valid),
-   .valid     (intf_i.valid),
+
 
    .out         (intf_i.output_data),
    .output_valid(intf_i.output_valid),
