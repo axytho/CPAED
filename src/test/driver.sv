@@ -131,7 +131,7 @@ class Driver #(config_t cfg);
                      assert (!$isunknown(tract_feature.inputs[y+2-cfg.KERNEL_SIZE/2 ][x+1-cfg.KERNEL_SIZE/2][inch]));
                      intf_i.cb.input1 <= tract_feature.inputs[y+2-cfg.KERNEL_SIZE/2 ][x+1-cfg.KERNEL_SIZE/2][inch];
                      end else begin
-                       intf_i.cb.nput1 <= 0; // zero padding for boundary cases
+                       intf_i.cb.input1 <= 0; // zero padding for boundary cases
                      end
                      if( x+2-cfg.KERNEL_SIZE/2 >= 0 && x+2-cfg.KERNEL_SIZE/2 < cfg.FEATURE_MAP_WIDTH
                         &&y+2-cfg.KERNEL_SIZE/2 >= 0 && y+2-cfg.KERNEL_SIZE/2 < cfg.FEATURE_MAP_HEIGHT) begin
