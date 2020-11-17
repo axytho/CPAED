@@ -39,13 +39,12 @@ module controller_fsm #(
 
   //loop counters (see register.sv for macro)
   `REG(32, k_v);
-  `REG(32, k_h);
   `REG(32, x);
   `REG(32, y);
   `REG(32, ch_in);
   `REG(32, ch_out);
 
-  logic reset_k_v, reset_k_h, reset_x, reset_y, reset_ch_in, reset_ch_out;
+  logic reset_k_v, reset_x, reset_y, reset_ch_in, reset_ch_out;
   //assign k_h_next = reset_k_h ? 0 : k_h + 1;
   assign k_v_next = reset_k_v ? 0 : k_v + 1;
   assign x_next = reset_x ? 0 : x + 1;
@@ -53,9 +52,8 @@ module controller_fsm #(
   assign ch_in_next = reset_ch_in ? 0 : ch_in + 1;
   assign ch_out_next = reset_ch_out ? 0 : ch_out + 1;
 
-  logic last_k_v, last_k_h, last_x, last_y, last_ch_in, last_ch_out;
+  logic last_k_v, last_x, last_y, last_ch_in, last_ch_out;
   //assign last_k_h = k_h == KERNEL_SIZE - 1;
-  assign last_k_h = 1;
   assign last_k_v = k_v == KERNEL_SIZE - 1;
   assign last_x = x == FEATURE_MAP_WIDTH-1;
   assign last_y = y == FEATURE_MAP_HEIGHT-1;
@@ -63,7 +61,6 @@ module controller_fsm #(
   assign last_ch_out = ch_out == OUTPUT_NB_CHANNELS - 1;
 
   
-  assign reset_k_h = last_k_h;
   assign reset_k_v = last_k_v;
   assign reset_x = last_x;
   assign reset_y = last_y;
@@ -83,20 +80,20 @@ module controller_fsm #(
   */
   // ==>
   //assign k_h_we    = mac_valid; //each time a mac is done, k_h_we increments (or resets to 0 if last)
-  assign k_v_we    = mac_valid && last_k_h; //only if last of k_h loop
+  assign k_v_we    = mac_valid ; //only if last of k_h loop
   assign ch_out_we = mac_valid && last_k_h && last_k_v; //only if last of all enclosed loops
   assign ch_in_we  = mac_valid && last_k_h && last_k_v && last_ch_out; //only if last of all enclosed loops
   assign y_we      = mac_valid && last_k_h && last_k_v && last_ch_out && last_ch_in; //only if last of all enclosed loops
   assign x_we      = mac_valid && last_k_h && last_k_v && last_ch_out && last_ch_in && last_y; //only if last of all enclosed loops
 
   logic last_overall;
-  assign last_overall   = last_k_h && last_k_v && last_ch_out && last_ch_in && last_y && last_x;
+  assign last_overall   =  last_k_v && last_ch_out && last_ch_in && last_y && last_x;
 
 
   //given loop order, partial sums need be saved over input channels
   
   `REG(1, mem_we_pl_stage1);
-   assign mem_we_pl_stage1_next = k_v == 2 && k_h == 0; 
+   assign mem_we_pl_stage1_next = k_v == 2; 
    assign mem_we_pl_stage1_we = 1; 
   `REG(1, mem_we_pl_stage2);
    assign mem_we_pl_stage2_next = mem_we_pl_stage1; 
@@ -126,7 +123,7 @@ module controller_fsm #(
    assign mem_write_addr = mem_write_addr_pl_stage4;
 
   //and loaded back
-  assign mem_re         = k_v == 0 && k_h == 0;
+  assign mem_re         = k_v == 0;
   assign mem_read_addr  = ch_out;
 
   assign mac_accumulate_internal = ! (k_v == 0 && k_h == 0);
