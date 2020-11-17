@@ -81,10 +81,10 @@ module controller_fsm #(
   // ==>
   //assign k_h_we    = mac_valid; //each time a mac is done, k_h_we increments (or resets to 0 if last)
   assign k_v_we    = mac_valid ; //only if last of k_h loop
-  assign ch_out_we = mac_valid && last_k_h && last_k_v; //only if last of all enclosed loops
-  assign ch_in_we  = mac_valid && last_k_h && last_k_v && last_ch_out; //only if last of all enclosed loops
-  assign y_we      = mac_valid && last_k_h && last_k_v && last_ch_out && last_ch_in; //only if last of all enclosed loops
-  assign x_we      = mac_valid && last_k_h && last_k_v && last_ch_out && last_ch_in && last_y; //only if last of all enclosed loops
+  assign ch_out_we = mac_valid  && last_k_v; //only if last of all enclosed loops
+  assign ch_in_we  = mac_valid  && last_k_v && last_ch_out; //only if last of all enclosed loops
+  assign y_we      = mac_valid  && last_k_v && last_ch_out && last_ch_in; //only if last of all enclosed loops
+  assign x_we      = mac_valid  && last_k_v && last_ch_out && last_ch_in && last_y; //only if last of all enclosed loops
 
   logic last_overall;
   assign last_overall   =  last_k_v && last_ch_out && last_ch_in && last_y && last_x;
