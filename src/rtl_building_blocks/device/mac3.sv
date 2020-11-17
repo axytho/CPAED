@@ -87,7 +87,7 @@ module mac3 #(
     (.a(a2),
      .b(b2),
      .out(product2));
- `REG(ACCUMULATOR_WIDTH, product0_1);
+ `REG(ACCUMULATOR_WIDTH, product2_1);
   assign product2_1_we   = input_valid; 
   assign product2_1_next = product2;
 
@@ -164,7 +164,7 @@ module mac3 #(
                 .B_WIDTH(B_WIDTH),
                 .OUT_WIDTH(ACCUMULATOR_WIDTH),
                 .OUT_SCALE(0))
-    mul3
+    mul8
     (.a(a8),
      .b(b8),
      .out(product8));
