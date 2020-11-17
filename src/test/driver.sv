@@ -98,47 +98,47 @@ class Driver #(config_t cfg);
                      if( x+0-cfg.KERNEL_SIZE/2 >= 0 && x+0-cfg.KERNEL_SIZE/2 < cfg.FEATURE_MAP_WIDTH
                         &&y+1-cfg.KERNEL_SIZE/2 >= 0 && y+1-cfg.KERNEL_SIZE/2 < cfg.FEATURE_MAP_HEIGHT) begin
                      assert (!$isunknown(tract_feature.inputs[y+1-cfg.KERNEL_SIZE/2 ][x+0-cfg.KERNEL_SIZE/2][inch]));
-                     intf_i.cb.input0 <= tract_feature.inputs[y+1-cfg.KERNEL_SIZE/2 ][x+0-cfg.KERNEL_SIZE/2][inch];
+                     intf_i.cb.input3 <= tract_feature.inputs[y+1-cfg.KERNEL_SIZE/2 ][x+0-cfg.KERNEL_SIZE/2][inch];
                      end else begin
-                       intf_i.cb.input0 <= 0; // zero padding for boundary cases
+                       intf_i.cb.input3 <= 0; // zero padding for boundary cases
                      end
                      if( x+1-cfg.KERNEL_SIZE/2 >= 0 && x+1-cfg.KERNEL_SIZE/2 < cfg.FEATURE_MAP_WIDTH
                          &&y+1-cfg.KERNEL_SIZE/2 >= 0 && y+1-cfg.KERNEL_SIZE/2 < cfg.FEATURE_MAP_HEIGHT) begin
                      assert (!$isunknown(tract_feature.inputs[y+1-cfg.KERNEL_SIZE/2 ][x+1-cfg.KERNEL_SIZE/2][inch]));
-                     intf_i.cb.input1 <= tract_feature.inputs[y+1-cfg.KERNEL_SIZE/2 ][x+1-cfg.KERNEL_SIZE/2][inch];
+                     intf_i.cb.input4 <= tract_feature.inputs[y+1-cfg.KERNEL_SIZE/2 ][x+1-cfg.KERNEL_SIZE/2][inch];
                      end else begin
-                       intf_i.cb.nput1 <= 0; // zero padding for boundary cases
+                       intf_i.cb.input4 <= 0; // zero padding for boundary cases
                      end
 					 @(intf_i.cb);	
                      if( x+2-cfg.KERNEL_SIZE/2 >= 0 && x+2-cfg.KERNEL_SIZE/2 < cfg.FEATURE_MAP_WIDTH
                         &&y+1-cfg.KERNEL_SIZE/2 >= 0 && y+1-cfg.KERNEL_SIZE/2 < cfg.FEATURE_MAP_HEIGHT) begin
                      assert (!$isunknown(tract_feature.inputs[y+1-cfg.KERNEL_SIZE/2 ][x+2-cfg.KERNEL_SIZE/2][inch]));
-                     intf_i.cb.input2 <= tract_feature.inputs[y+1-cfg.KERNEL_SIZE/2 ][x+2-cfg.KERNEL_SIZE/2][inch];
+                     intf_i.cb.input0 <= tract_feature.inputs[y+1-cfg.KERNEL_SIZE/2 ][x+2-cfg.KERNEL_SIZE/2][inch];
                      end else begin
-                        intf_i.cb.input2 <= 0; // zero padding for boundary cases
+                        intf_i.cb.input0 <= 0; // zero padding for boundary cases
                      end
 
                      intf_i.cb.valid <= 1;
                      if( x+0-cfg.KERNEL_SIZE/2 >= 0 && x+0-cfg.KERNEL_SIZE/2 < cfg.FEATURE_MAP_WIDTH
                         &&y+2-cfg.KERNEL_SIZE/2 >= 0 && y+2-cfg.KERNEL_SIZE/2 < cfg.FEATURE_MAP_HEIGHT) begin
                      assert (!$isunknown(tract_feature.inputs[y+2-cfg.KERNEL_SIZE/2 ][x+0-cfg.KERNEL_SIZE/2][inch]));
-                     intf_i.cb.input0 <= tract_feature.inputs[y+2-cfg.KERNEL_SIZE/2 ][x+0-cfg.KERNEL_SIZE/2][inch];
+                     intf_i.cb.input1 <= tract_feature.inputs[y+2-cfg.KERNEL_SIZE/2 ][x+0-cfg.KERNEL_SIZE/2][inch];
                      end else begin
-                       intf_i.cb.input0 <= 0; // zero padding for boundary cases
+                       intf_i.cb.input1 <= 0; // zero padding for boundary cases
                      end
                      if( x+1-cfg.KERNEL_SIZE/2 >= 0 && x+1-cfg.KERNEL_SIZE/2 < cfg.FEATURE_MAP_WIDTH
                          &&y+2-cfg.KERNEL_SIZE/2 >= 0 && y+2-cfg.KERNEL_SIZE/2 < cfg.FEATURE_MAP_HEIGHT) begin
                      assert (!$isunknown(tract_feature.inputs[y+2-cfg.KERNEL_SIZE/2 ][x+1-cfg.KERNEL_SIZE/2][inch]));
-                     intf_i.cb.input1 <= tract_feature.inputs[y+2-cfg.KERNEL_SIZE/2 ][x+1-cfg.KERNEL_SIZE/2][inch];
+                     intf_i.cb.input2 <= tract_feature.inputs[y+2-cfg.KERNEL_SIZE/2 ][x+1-cfg.KERNEL_SIZE/2][inch];
                      end else begin
-                       intf_i.cb.input1 <= 0; // zero padding for boundary cases
+                       intf_i.cb.input2 <= 0; // zero padding for boundary cases
                      end
                      if( x+2-cfg.KERNEL_SIZE/2 >= 0 && x+2-cfg.KERNEL_SIZE/2 < cfg.FEATURE_MAP_WIDTH
                         &&y+2-cfg.KERNEL_SIZE/2 >= 0 && y+2-cfg.KERNEL_SIZE/2 < cfg.FEATURE_MAP_HEIGHT) begin
                      assert (!$isunknown(tract_feature.inputs[y+2-cfg.KERNEL_SIZE/2 ][x+2-cfg.KERNEL_SIZE/2][inch]));
-                     intf_i.cb.input2 <= tract_feature.inputs[y+2-cfg.KERNEL_SIZE/2 ][x+2-cfg.KERNEL_SIZE/2][inch];
+                     intf_i.cb.input3 <= tract_feature.inputs[y+2-cfg.KERNEL_SIZE/2 ][x+2-cfg.KERNEL_SIZE/2][inch];
                      end else begin
-                        intf_i.cb.input2 <= 0; // zero padding for boundary cases
+                        intf_i.cb.input3 <= 0; // zero padding for boundary cases
                      end					 
 
                   
