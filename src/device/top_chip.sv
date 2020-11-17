@@ -23,16 +23,14 @@ module top_chip #(
    output logic ext_mem_write_en,
 
    //system inputs and outputs
-   input logic [IO_DATA_WIDTH-1:0] a_input0,
-   input logic [IO_DATA_WIDTH-1:0] a_input1,
-   input logic [IO_DATA_WIDTH-1:0] a_input2,
-   input logic a_valid,
-   output logic a_ready,
-   input logic [IO_DATA_WIDTH-1:0] b_input0,
-   input logic [IO_DATA_WIDTH-1:0] b_input1,
-   input logic [IO_DATA_WIDTH-1:0] b_input2,
-   input logic b_valid,
-   output logic b_ready,
+   input logic [IO_DATA_WIDTH-1:0] input0,
+   input logic [IO_DATA_WIDTH-1:0] input1,
+   input logic [IO_DATA_WIDTH-1:0] input2,
+   input logic  valid,
+   output logic ready,
+   input logic [IO_DATA_WIDTH-1:0] input3,
+   input logic [IO_DATA_WIDTH-1:0] input4,
+   input logic valid,
 
    //output
    output logic signed [IO_DATA_WIDTH-1:0] out,
@@ -47,30 +45,67 @@ module top_chip #(
   );
 
 
-  logic write_a;
-  logic write_b;
+  logic write_af;
+  logic write_bf;
+  logic write_as;
+  logic write_bs;
   
   `REG(IO_DATA_WIDTH, a0);
   `REG(IO_DATA_WIDTH, a1);
   `REG(IO_DATA_WIDTH, a2);
+  `REG(IO_DATA_WIDTH, a3);
+  `REG(IO_DATA_WIDTH, a4);
+  `REG(IO_DATA_WIDTH, a5);  
+  `REG(IO_DATA_WIDTH, a6);
+  `REG(IO_DATA_WIDTH, a7);
+  `REG(IO_DATA_WIDTH, a8);  
   `REG(IO_DATA_WIDTH, b0);
   `REG(IO_DATA_WIDTH, b1);
   `REG(IO_DATA_WIDTH, b2);
-  assign a0_next = a_input0;
-  assign a1_next = a_input1;
-  assign a2_next = a_input2;
-  assign b0_next = b_input0;
-  assign b1_next = b_input1;
-  assign b2_next = b_input2;
-  assign a0_we = write_a;
-  assign b0_we = write_b;
-  assign a1_we = write_a;
-  assign b1_we = write_b;
-  assign a2_we = write_a;
-  assign b2_we = write_b;
-
+  `REG(IO_DATA_WIDTH, b3);
+  `REG(IO_DATA_WIDTH, b4);
+  `REG(IO_DATA_WIDTH, b5);  
+  `REG(IO_DATA_WIDTH, b6);
+  `REG(IO_DATA_WIDTH, b7);
+  `REG(IO_DATA_WIDTH, b8); 
+  assign a0_next = input0;
+  assign a1_next = input1;
+  assign a2_next = nput2;
+  assign a3_next = input3;
+  assign a4_next = input4;
+  assign a5_next = input0;
+  assign a6_next = input1;
+  assign a7_next = input2;
+  assign a8_next = input3;
+  assign b0_next = input0;
+  assign b1_next = input1;
+  assign b2_next = input2;
+  assign b3_next = input3;
+  assign b4_next = input4;
+  assign b5_next = input0;
+  assign b6_next = input1;
+  assign b7_next = input2;
+  assign b8_next = input3;
+  assign a0_we = write_af;
+  assign b0_we = write_bf;
+  assign a1_we = write_af;
+  assign b1_we = write_bf;
+  assign a2_we = write_af;
+  assign b2_we = write_bf;
+  assign a3_we = write_af;
+  assign b3_we = write_bf;
+  assign a4_we = write_af;
+  assign b4_we = write_bf;
+  assign a5_we = write_as;
+  assign b5_we = write_bs;
+  assign a6_we = write_as;
+  assign b6_we = write_bs;
+  assign a7_we = write_as;
+  assign b7_we = write_bs;
+  assign a8_we = write_as;
+  assign b8_we = write_bs;
+  
   logic mac_valid;
-  logic mac_accumulate_internal;
   logic mac_accumulate_with_0;
 
 
@@ -93,15 +128,14 @@ module top_chip #(
   .mem_re(ext_mem_read_en),
   .mem_read_addr(ext_mem_read_addr),
 
-  .a_valid(a_valid),
-  .a_ready(a_ready),
-  .b_valid(b_valid),
-  .b_ready(b_ready),
-  .write_a(write_a),
-  .write_b(write_b),
-  .mac_valid(mac_valid),
-  .mac_accumulate_internal(mac_accumulate_internal),
-  .mac_accumulate_with_0(mac_accumulate_with_0),
+  .valid (mac_valid),
+  .ready (ready),
+  .write_af (write_af),
+  .write_bf (write_bf),
+  .write_as (write_as),
+  .write_bs (write_bs),
+  .mac_valid,
+  .mac_accumulate_with_0,
 
   .output_valid(output_valid),
   .output_x(output_x),
@@ -130,15 +164,27 @@ module top_chip #(
    .arst_n_in(arst_n_in),
 
    .input_valid(mac_valid),
-   .out_written_to_mem(ext_mem_write_en_to_mac),
-   .accumulate_internal(mac_accumulate_internal),
    .partial_sum_in(mac_partial_sum),
    .a0(a0),
-   .a1(a1),
-   .a2(a2),
    .b0(b0),
+   .a1(a1),
    .b1(b1),
+   .a2(a2),
    .b2(b2),
+  
+   .a3(a3),
+   .b3(b3),
+   .a4(a4),
+   .b4(b4),
+   .a5(a5),
+   .b5(b5),
+  
+   .a6(a6),
+   .b6(b6),
+   .a7(a7),
+   .b7(b7),
+   .a8(a8),
+   .b8(b8),
    .out(mac_out));
 
   assign out = mac_out;

@@ -7,17 +7,14 @@ interface intf #(
   logic arst_n;
 
   // input interface
-  logic [cfg.DATA_WIDTH - 1 : 0] a_input0;
-  logic [cfg.DATA_WIDTH - 1 : 0] a_input1;
-  logic [cfg.DATA_WIDTH - 1 : 0] a_input2;
-  logic a_valid;
-  logic a_ready;
+  logic [cfg.DATA_WIDTH - 1 : 0] input0;
+  logic [cfg.DATA_WIDTH - 1 : 0] input1;
+  logic [cfg.DATA_WIDTH - 1 : 0] input2;
 
-  logic [cfg.DATA_WIDTH - 1 : 0] b_input0;
-  logic [cfg.DATA_WIDTH - 1 : 0] b_input1;
-  logic [cfg.DATA_WIDTH - 1 : 0] b_input2;
-  logic b_valid;
-  logic b_ready;
+  logic [cfg.DATA_WIDTH - 1 : 0] input3;
+  logic [cfg.DATA_WIDTH - 1 : 0] input4;
+  logic valid;
+  logic ready;
 
   // output interface
   logic signed [cfg.DATA_WIDTH-1:0] output_data;

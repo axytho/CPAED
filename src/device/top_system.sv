@@ -14,16 +14,13 @@ module top_system #(
      input logic arst_n_in,  //asynchronous reset, active low
 
      //system inputs and outputs
-     input logic [IO_DATA_WIDTH-1:0] a_input0,
-     input logic [IO_DATA_WIDTH-1:0] a_input1,
-     input logic [IO_DATA_WIDTH-1:0] a_input2,
-     input logic a_valid,
-     output logic a_ready,
-     input logic [IO_DATA_WIDTH-1:0] b_input0,
-     input logic [IO_DATA_WIDTH-1:0] b_input1,
-     input logic [IO_DATA_WIDTH-1:0] b_input2,
-     input logic b_valid,
-     output logic b_ready,
+     input logic [IO_DATA_WIDTH-1:0] input0,
+     input logic [IO_DATA_WIDTH-1:0] input1,
+     input logic [IO_DATA_WIDTH-1:0] input2,
+     input logic valid,
+     output logic ready,
+     input logic [IO_DATA_WIDTH-1:0] input3,
+     input logic [IO_DATA_WIDTH-1:0] input4,
 
      //output
      output logic signed [IO_DATA_WIDTH-1:0] out,
@@ -84,16 +81,13 @@ module top_system #(
     .ext_mem_din(ext_mem_din),
     .ext_mem_write_en(ext_mem_write_en),
 
-    .a_input0(a_input0),
-    .a_input1(a_input1),
-    .a_input2(a_input2),
-    .a_valid(a_valid),
-    .a_ready(a_ready),
-    .b_input0(b_input0),
-    .b_input1(b_input1),
-    .b_input2(b_input2),
-    .b_valid(b_valid),
-    .b_ready(b_ready),
+    .input0(input0),
+    .input1(input1),
+    .input2(input2),
+    .valid(valid),
+    .ready(ready),
+    .input3(input3),
+    .input4(input4),
 
     .out(out),
     .output_valid(output_valid),
