@@ -30,7 +30,6 @@ module top_chip #(
    output logic ready,
    input logic [IO_DATA_WIDTH-1:0] input3,
    input logic [IO_DATA_WIDTH-1:0] input4,
-   input logic valid,
 
    //output
    output logic signed [IO_DATA_WIDTH-1:0] out,
