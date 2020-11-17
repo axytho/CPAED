@@ -206,48 +206,48 @@ module controller_fsm #(
 				  fetchingw  = 0;
                   next_state = (start) ? PRE_FETCH_W1 : IDLE;			  
 			  end
-			  PRE_FETCH_W1 begin:
+			  PRE_FETCH_W1: begin
 			      write_bf   = 1;
 			      next_state = (valid) ? PRE_FETCH_W2 : PRE_FETCH_W1;
 			  end
-			  PRE_FETCH_W2 begin:
+			  PRE_FETCH_W2: begin
 			      write_bs   = 1;
 			      next_state = (valid) ? MAC1 : PRE_FETCH_W2;
 			  end			  
-			  MAC1 begin:
+			  MAC1: begin
 			      mac_valid  = valid;
 			      write_af   = 1;
 			      fetchingw  = 0;
 			      next_state = (valid) ? MAC2: MAC1;
 			  end
-			  MAC2 begin:
+			  MAC2: begin
 			      mac_valid  = valid;
 			      write_as   = 1;
 			      fetchingw  = 0;
 			      extra_state = (last_overall)? LO1 : ((fetchw_next) ? MACW1: MAC1);
 				  next_state  = (valid) ? extra_state:MAC2; 
 			  end
-			  MACW1 begin:
+			  MACW1: begin
 			      write_bf    = 1;
 				  next_state  = (valid) ? MACW2:MACW1; 
 			  end
-			  MACW2 begin:
+			  MACW2: begin
 			      write_bs    = 1;
 				  next_state  = (valid) ? MAC1:MACW2; 
 			  end
-			  begin LO1:
+			  begin: LO1
 				  next_state  = LO2; 
 			  end
-			  begin LO2:
+			  begin: LO2
 				  next_state  = LO3; 
 			  end	
-			  begin LO3:
+			  begin: LO3
 				  next_state  = LO4; 
 			  end
-			  begin LO4:
+			  begin:LO4
 				  next_state  = DONE; 
 			  end
-			  begin DONE:
+			  begin: DONE
 				  next_state  = IDLE; 
 			  end				  
 		  endcase
