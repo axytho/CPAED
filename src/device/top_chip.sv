@@ -70,7 +70,7 @@ module top_chip #(
   `REG(IO_DATA_WIDTH, b8); 
   assign a0_next = input0;
   assign a1_next = input1;
-  assign a2_next = nput2;
+  assign a2_next = input2;
   assign a3_next = input3;
   assign a4_next = input4;
   assign a5_next = input0;
