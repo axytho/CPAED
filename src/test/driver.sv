@@ -150,7 +150,6 @@ class Driver #(config_t cfg);
                   //intf_i.cb.a_valid <= 0;
                   
                 //end
-              end
             end
           end
         end
