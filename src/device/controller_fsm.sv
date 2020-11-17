@@ -65,7 +65,7 @@ module controller_fsm #(
   assign k_next      = ~k; 
   assign ch_out_next = (last_ch_out) ? 0: ch_out +1;
   assign y_next      = (last_y) ?      0: y +1 ;
-  assign x_next      = (last_x ?)      0: x + 1;
+  assign x_next      = (last_x) ?      0: x + 1;
   assign ch_in_next  = (last_ch_in) ?  0: ch_in + 1;
   
   
