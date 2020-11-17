@@ -31,7 +31,7 @@ interface intf #(
     output arst_n;
     output input0;
     output input1;
-    output nput2;
+    output input2;
     output valid;
     input  ready;
 
