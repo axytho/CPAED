@@ -47,7 +47,7 @@ class Driver #(config_t cfg);
       // Get a transaction with feature from the Generator
       $display("[DRV] ----- Driving a new input feature map -----");
 	  for(int inch=0;inch<cfg.INPUT_NB_CHANNELS; inch++) begin
-         $display("[DRV] %.2f %% of the computation done", ((x)*100.0)/cfg.INPUT_NB_CHANNELS);
+         $display("[DRV] %.2f %% of the computation done", ((inch)*100.0)/cfg.INPUT_NB_CHANNELS);
          for(int outch=0;outch<cfg.OUTPUT_NB_CHANNELS; outch++) begin
 		     intf_i.cb.valid <= 1;
              assert (!$isunknown(tract_kernel.kernel[0][0][inch][outch]));
