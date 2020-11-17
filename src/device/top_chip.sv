@@ -146,8 +146,10 @@ module top_chip #(
   
   
   
-   covergroup cg1@(posedge clk);
+   covergroup cg3@(posedge clk);
        c: cross ext_mem_din, ext_mem_write_en; 	   
    endgroup 
+   
+   cg3 inst = new;
 
 endmodule
