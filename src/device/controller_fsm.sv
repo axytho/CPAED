@@ -194,7 +194,6 @@ module controller_fsm #(
 		  running   = 1;
           ready     = 1;
 		  mac_valid = 0;
-		  fetchingw = 1;
 		  write_af  = 0;
 	      write_bf  = 0;
 	      write_as  = 0;
@@ -203,7 +202,6 @@ module controller_fsm #(
               IDLE: begin
                   running    = 0;
 				  ready      = 0;
-				  fetchingw  = 0;
                   next_state = (start) ? PRE_FETCH_W1 : IDLE;			  
 			  end
 			  PRE_FETCH_W1: begin
@@ -217,13 +215,11 @@ module controller_fsm #(
 			  MAC1: begin
 			      mac_valid  = valid;
 			      write_af   = 1;
-			      fetchingw  = 0;
 			      next_state = (valid) ? MAC2: MAC1;
 			  end
 			  MAC2: begin
 			      mac_valid  = valid;
 			      write_as   = 1;
-			      fetchingw  = 0;
 			      extra_state = (last_overall)? LO1 : ((fetchw_next) ? MACW1: MAC1);
 				  next_state  = (valid) ? extra_state:MAC2; 
 			  end
