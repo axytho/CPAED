@@ -53,6 +53,7 @@ module tbench_top;
    .input3     (intf_i.input3),
    .input4     (intf_i.input4),
    .valid     (intf_i.valid),
+   .ready     (intf_i.ready)
 
 
    .out         (intf_i.output_data),

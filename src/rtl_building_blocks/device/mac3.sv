@@ -11,7 +11,6 @@ module mac3 #(
 
   //input interface
   input logic input_valid,
-  input logic accumulate_internal, //accumulate (accumulator <= a*b + accumulator) if high (1) or restart accumulation (accumulator <= a*b+0) if low (0)
   input logic [ACCUMULATOR_WIDTH-1:0] partial_sum_in,   
   input logic signed [A_WIDTH-1:0] a0,
   input logic signed [B_WIDTH-1:0] b0,
