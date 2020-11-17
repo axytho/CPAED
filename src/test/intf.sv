@@ -29,17 +29,14 @@ interface intf #(
   default clocking cb @(posedge clk);
     default input #1ns output #2ns;
     output arst_n;
-    output a_input0;
-    output a_input1;
-    output a_input2;
-    output a_valid;
-    input  a_ready;
+    output input0;
+    output input1;
+    output nput2;
+    output valid;
+    input  ready;
 
-    output b_input0;
-    output b_input1;
-    output b_input2;
-    output b_valid;
-    input  b_ready;
+    output input3;
+    output input4;
 
     input output_data;
     input output_valid;
