@@ -255,11 +255,11 @@ module controller_fsm #(
 	  {
 		bins a = (IDLE         => PRE_FETCH_W1);
 		bins b = (PRE_FETCH_W2 => MAC1);
-		bins c = (MAC1      => MAC2);
-		bins d = (MAC2     => MAC1);
-		bins e = (MAC2     => MACW1);
-		bins f = (DONE     => IDLE);
-		bins h = {MACW2    => MAC1};		
+		bins c = (MAC1         => MAC2);
+		bins d = (MAC2         => MAC1);
+		bins e = (MAC2         => MACW1);
+		bins f = (DONE         => IDLE);
+		bins h = (MACW2        => MAC1);		
 	  }
   endgroup
   cg2 cg_inst = new; 	  
