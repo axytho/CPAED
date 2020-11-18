@@ -39,7 +39,6 @@ module controller_fsm #(
    fsm_state current_state;
    fsm_state next_state;
    fsm_state extra_state;
-   logic reset_fw, reset_ch_in, reset_ch_out, reset_x, reset_y;
    logic last_x, last_y, last_ch_in, last_ch_out,last_overall;
    logic  fetchw_next;
    
@@ -249,6 +248,20 @@ module controller_fsm #(
 				  next_state  = IDLE; 
 			  end				  
 		  endcase
-      end 	  
+      end 	 
+
+  covergroup cg2@(posedge clk);
+      c1: coverpoint current_state
+	  {
+		bins a = (IDLE         => PRE_FETCH_W1);
+		bins b = (PRE_FETCH_W2 => MAC1);
+		bins c = (MAC1      => MAC2);
+		bins d = (MAC2     => MAC1);
+		bins e = (MAC2     => MACW1);
+		bins f = (DONE     => IDLE);
+		bins h = {MACW2    => MAC1};		
+	  }
+  endgroup
+  cg2 cg_inst = new; 	  
 
 endmodule

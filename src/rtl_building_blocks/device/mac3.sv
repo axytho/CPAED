@@ -295,6 +295,12 @@ module mac3 #(
    assign tempSum8_5_next = tempSum8;
 // END OF STAGE 5
    assign out = tempSum8_5 >>> OUTPUT_SCALE;   
+   covergroup cg1@(posedge clk);
+       c1: coverpoint out;
+       c2: cross a1,b1; 	   
+   endgroup 
+   
+   cg1 cg_inst = new;
 endmodule
 
 
