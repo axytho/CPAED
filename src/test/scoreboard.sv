@@ -10,7 +10,7 @@ class Scoreboard;
 
   function new(mailbox #(bit) c2s);
     this.chk2scb = c2s;
-    NO_tests = 1;
+    NO_tests = 4;
     no_tests_done = 0;
     no_tests_ok = 0;
     no_tests_nok = 0;
