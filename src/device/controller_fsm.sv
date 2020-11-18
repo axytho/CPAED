@@ -170,7 +170,7 @@ module controller_fsm #(
   assign mem_we_4_we   = 1; 
   assign mem_we_5_next = mem_we_4;
   assign mem_we_5_we   = 1;
-  assign mem_we        m mem_we_5;  
+  assign mem_we        = mem_we_5;  
   /*
   chosen loop order:
   for ch_in
