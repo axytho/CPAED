@@ -155,7 +155,7 @@ module mac3 #(
      .b(b7),
      .out(product7));
  `REG(ACCUMULATOR_WIDTH, product7_2);
-  assign product7_2_we   = input_valid; 
+  assign product7_2_we   = 1; 
   assign product7_2_next = product7;
 
   logic signed [ACCUMULATOR_WIDTH-1:0] product8;
