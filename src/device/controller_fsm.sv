@@ -71,10 +71,10 @@ module controller_fsm #(
   
   
   assign k_we      = mac_valid;
-  assign ch_out_we = x_we       && last_ch_out;
-  assign y_we      = k_we       && last_y;
-  assign x_we      = y_we       && last_x;
-  assign ch_in_we  = ch_out_we  && last_ch_in; 
+  assign ch_out_we = x_we       && last_x;
+  assign y_we      = k_we;
+  assign x_we      = y_we       && last_y;
+  assign ch_in_we  = ch_out_we  && last_ch_out; 
   
   assign mac_accumulate_with_0 = ch_in == 0;
   
