@@ -133,7 +133,8 @@ module controller_fsm #(
    assign output_ch = ch_out_5; 
    assign output_x  = x_5;
    assign output_y  = y_5; 
-
+   assign mem_write_addr[31:17] = 15'b0;
+   assign mem_read_addr[31:17] = 15'b0;
    assign mem_write_addr[16:0] = {x_5[5:0], y_5[5:0],ch_out_5[4:0]};;   
   `REG(1, output_valid_1);
   `REG(1, output_valid_2);
