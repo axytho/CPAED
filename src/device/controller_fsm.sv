@@ -47,7 +47,7 @@ module controller_fsm #(
 
   
   //loop counters (see register.sv for macro)
-  `REG(32, k);
+  `REG(1, k);
   `REG(32, x);
   `REG(32, y);
   `REG(32, ch_in);
