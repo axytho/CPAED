@@ -142,7 +142,7 @@ module controller_fsm #(
   `REG(1, output_valid_4);
   `REG(1, output_valid_5);
   assign output_valid_1_next = k && mac_valid && last_ch_in;
-  assign output_valid_1_we   = mac_valid; 
+  assign output_valid_1_we   = 1; 
   assign output_valid_2_next = output_valid_1;
   assign output_valid_2_we   = 1; 
   assign output_valid_3_next = output_valid_2;
