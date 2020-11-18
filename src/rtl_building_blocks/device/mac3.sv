@@ -223,8 +223,8 @@ module mac3 #(
      .b(tempSum1_2),
      .out(tempSum3));
   `REG(ACCUMULATOR_WIDTH, tempSum3_3);
-   assign tempSum0_3_we   = 1; 
-   assign tempSum0_3_next = tempSum3;
+   assign tempSum3_3_we   = 1; 
+   assign tempSum3_3_next = tempSum3;
    
   logic signed [ACCUMULATOR_WIDTH-1:0] tempSum4;
   adder #( .A_WIDTH(ACCUMULATOR_WIDTH),
