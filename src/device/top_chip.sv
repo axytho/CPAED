@@ -127,7 +127,7 @@ module top_chip #(
   .mem_re(ext_mem_read_en),
   .mem_read_addr(ext_mem_read_addr),
 
-  .valid (mac_valid),
+  .valid (valid),
   .ready (ready),
   .write_af (write_af),
   .write_bf (write_bf),
