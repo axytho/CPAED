@@ -8,7 +8,7 @@ class Checker #(config_t cfg);
   mailbox #(Transaction_Output_Word#(cfg)) mon2chk;
   mailbox #(bit) chk2scb;
   
-  bit verbose= 1;
+  bit verbose= 0;
 
   function new(
       mailbox #(Transaction_Feature    #(cfg)) g2c_feature,
