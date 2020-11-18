@@ -129,7 +129,7 @@ module mac3 #(
      .b(b5),
      .out(product5));
  `REG(ACCUMULATOR_WIDTH, product5_2);
-  assign product5_2_we   = input_valid; 
+  assign product5_2_we   = 1; 
   assign product5_2_next = product5;   
 
   logic signed [ACCUMULATOR_WIDTH-1:0] product6;
@@ -142,7 +142,7 @@ module mac3 #(
      .b(b6),
      .out(product6));
  `REG(ACCUMULATOR_WIDTH, product6_2);
-  assign product6_2_we   = input_valid; 
+  assign product6_2_we   = 1; 
   assign product6_2_next = product6;
 
   logic signed [ACCUMULATOR_WIDTH-1:0] product7;
@@ -168,7 +168,7 @@ module mac3 #(
      .b(b8),
      .out(product8));
  `REG(ACCUMULATOR_WIDTH, product8_2);
-  assign product8_2_we   = input_valid; 
+  assign product8_2_we   = 1; 
   assign product8_2_next = product8;
   
   
@@ -182,7 +182,7 @@ module mac3 #(
      .b(product1_1),
      .out(tempSum0));
   `REG(ACCUMULATOR_WIDTH, tempSum0_2);
-   assign tempSum0_2_we   = input_valid; 
+   assign tempSum0_2_we   = 1; 
    assign tempSum0_2_next = tempSum0;
    
   logic signed [ACCUMULATOR_WIDTH-1:0] tempSum1;
@@ -195,7 +195,7 @@ module mac3 #(
      .b(product3_1),
      .out(tempSum1));
   `REG(ACCUMULATOR_WIDTH, tempSum1_2);
-   assign tempSum1_2_we   = input_valid; 
+   assign tempSum1_2_we   = 1; 
    assign tempSum1_2_next = tempSum1;
   logic signed [ACCUMULATOR_WIDTH-1:0] tempSum2;
   adder #( .A_WIDTH(ACCUMULATOR_WIDTH),
@@ -207,7 +207,7 @@ module mac3 #(
      .b(partial_sum_in_1),
      .out(tempSum2));
   `REG(ACCUMULATOR_WIDTH, tempSum2_2);
-   assign tempSum2_2_we   = input_valid; 
+   assign tempSum2_2_we   = 1; 
    assign tempSum2_2_next = tempSum2;
 // END OF THE SECOND STAGE
 
